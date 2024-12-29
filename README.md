@@ -1,68 +1,48 @@
-# CodeIgniter 4 Application Starter
+# Application de Gestion des Examens
 
-## What is CodeIgniter?
+## Description
+Une application de gestion des examens avec des fonctionnalités permettant :
+- La saisie des notes par les professeurs.
+- La gestion des réclamations des étudiants.
+- La consultation des résultats par les étudiants.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Fonctionnalités
+1. **Saisie des Notes**  
+   Les professeurs peuvent ajouter et modifier les notes des étudiants pour chaque cours.
+   
+2. **Gestion des Réclamations**  
+   Les étudiants peuvent soumettre des réclamations concernant leurs notes, qui seront traitées par les professeurs.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+3. **Consultation des Résultats**  
+   Les étudiants peuvent consulter leurs résultats et leur moyenne.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Technologies Utilisées
+- **Frontend** : HTML, CSS, JavaScript.
+- **Backend** : PHP, CodeIgniter.
+- **Base de Données** : MySQL.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### Étapes
+1. Clonez le projet :
+   ```bash
+   git clone https://github.com/ouchgoutmohamed/App_Gestion_Des_examens.git
+   ```
+2. Configurez la base de données :
+   - Importez le fichier SQL inclus dans le projet (`database.sql`).
+   - Configurez les informations de connexion dans le fichier `.env`.
+3. Lancez le serveur web :
+   ```bash
+   php spark serve
+   ```
 
-## Installation & updates
+## Contribution
+Pour contribuer :
+1. Faites un fork du projet.
+2. Créez une nouvelle branche :
+   ```bash
+   git checkout -b nouvelle-fonctionnalité
+   ```
+3. Effectuez vos modifications et testez-les.
+4. Envoyez une pull request.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
-
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Licence
+Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Vous êtes libre de l'utiliser et de le modifier.
