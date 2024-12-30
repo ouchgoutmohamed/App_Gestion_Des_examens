@@ -19,7 +19,7 @@
             <div class="2xl:w-1/2 lg:w-2/3 md:w-1/2 w-full">
                 <div class="card overflow-hidden sm:rounded-md rounded-none">
                     <div class="p-6">
-                        <a href="index.html" class="block mb-6">
+                        <a href="#" class="block mb-6">
                             <img class="h-6 block dark:hidden" src="assets/images/logo-dark.png" alt="">
                             <img class="h-6 hidden dark:block" src="assets/images/logo-light.png" alt="">
                         </a>
@@ -92,7 +92,7 @@
                             </div>
                         </form>
 
-                        <p class="text-gray-500 dark:text-gray-400 text-center">Already have an account? <a href="<?= site_url('auth/login') ?>" class="text-primary ms-1"><b>Log In</b></a></p>
+                        <p class="text-gray-500 dark:text-gray-400 text-center">Already have an account? <a href="<?= site_url('/login') ?>" class="text-primary ms-1"><b>Log In</b></a></p>
                     </div>
                 </div>
             </div>
