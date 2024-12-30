@@ -71,7 +71,7 @@ class Validation extends BaseConfig
                 'is_unique' => 'This CNE is already registered.',
             ],
         ],
-        'phone_number' => [
+        'phone' => [
             'rules' => 'required|numeric|min_length[10]|max_length[15]',
             'errors' => [
                 'required' => 'The phone number is mandatory.',
