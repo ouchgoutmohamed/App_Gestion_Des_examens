@@ -8,7 +8,7 @@ class Student extends User
 {
     public function signup()
     {
-        $data = $this->request()->getPost(['first_name', 'last_name', 'cin', 'cne', 'phone_number', 'email', 'password', 'confirm_password']);
+        $data = $this->request()->getPost(['first_name', 'last_name', 'cin', 'cne', 'phone', 'email', 'password', 'confirm_password']);
 
         if (!$this->validateData($data, config('Validation')->signup)) {
             return view('register_student', [
