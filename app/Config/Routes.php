@@ -6,12 +6,15 @@ use App\Controllers\User;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->addRedirect('/', '/login');
 
 // show login and signup pages
-$routes->get('/login', [User::class, 'showLoginForm']);
-$routes->get('/signup', [User::class, 'showSignupForm']);
+$routes->view('/login', 'login');
+$routes->view('/signup', 'register_student');
 
 // handle login and signup requests
 $routes->post('/login', [User::class, 'login']);
 $routes->post('/signup', [User::class, 'signup']);
+
+// handle logout request
+$routes->get('/logout', [User::class, 'logout']);
