@@ -12,16 +12,16 @@
 
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="public/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- App css -->
-    <link href="public/assets/css/app.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
 
     <!-- Icons css -->
-    <link href="public/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
 
     <!-- Theme Config Js -->
-    <script src="public/assets/js/config.js"></script>
+    <script src="assets/js/config.js"></script>
 </head>
 
 <body>
@@ -33,13 +33,13 @@
                 <div class="card overflow-hidden sm:rounded-md rounded-none">
                     <div class="p-6">
                         <a href="index.html" class="block mb-6">
-                            <img class="h-6 block dark:hidden" src="public/assets/images/logo-dark.png" alt="">
-                            <img class="h-6 hidden dark:block" src="public/assets/images/logo-light.png" alt="">
+                            <img class="h-6 block dark:hidden" src="assets/images/logo-dark.png" alt="">
+                            <img class="h-6 hidden dark:block" src="assets/images/logo-light.png" alt="">
                         </a>
                         <h2 class="text-md font-semibold text-gray-800 dark:text-gray-200 mb-6 text-left">Please fill in your details to register as a student</h2>
 
 
-                        <form action="<?= site_url('student/register') ?>" method="post">
+                        <form action="<?= site_url('/signup') ?>" method="post">
                             <!-- Full Name Fields -->
                             <div class="mb-4 flex gap-6">
                                 <div class="w-1/2">
