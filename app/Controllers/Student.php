@@ -10,18 +10,7 @@ class Student extends User
     {
         $data = $this->request()->getPost(['first_name', 'last_name', 'cin', 'cne', 'phone_number', 'email', 'password', 'confirm_password']);
 
-        $rules = [
-            'first_name' => 'required|alpha_space',
-            'last_name' => 'required|alpha_space',
-            'cin' => 'required|is_unique[users.cin]',
-            'cne' => 'required|is_unique[users.cne]',
-            'phone_number' => 'required|numeric|min_length[10]|max_length[15]',
-            'email' => 'required|valid_email|is_unique[users.email]',
-            'password' => 'required|min_length[8]',
-            'confirm_password' => 'required|matches[password]' // Matches the 'password' field
-        ];
-
-        if (!$this->validateData($data, $rules)) {
+        if (!$this->validateData($data, config('Validation')->signup)) {
             return view('register_student', [
                 'errors' => $this->validator->getErrors(),
                 'old' => $data
