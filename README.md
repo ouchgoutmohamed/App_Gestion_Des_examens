@@ -10,14 +10,14 @@ Une application de gestion des examens avec des fonctionnalités permettant :
 1. **Saisie des Notes**  
    Les professeurs peuvent ajouter et modifier les notes des étudiants pour chaque cours.
    
-2. **Gestion des Réclamations**  
-   Les étudiants peuvent soumettre des réclamations concernant leurs notes, qui seront traitées par les professeurs.
+2. **Consultation des résultats**  
+   Les étudiants peuvent consulter leurs notes.
 
 3. **Consultation des Résultats**  
    Les étudiants peuvent consulter leurs résultats et leur moyenne.
 
 ## Technologies Utilisées
-- **Frontend** : HTML, CSS, JavaScript.
+- **Frontend** : HTML, CSS, JavaScript, Tailwind CSS.
 - **Backend** : PHP, CodeIgniter.
 - **Base de Données** : MySQL.
 
@@ -26,10 +26,21 @@ Une application de gestion des examens avec des fonctionnalités permettant :
    ```bash
    git clone https://github.com/ouchgoutmohamed/App_Gestion_Des_examens.git
    ```
-2. Configurez la base de données :
-   - Importez le fichier SQL inclus dans le projet (`database.sql`).
-   - Configurez les informations de connexion dans le fichier `.env`.
-3. Lancez le serveur web :
+2. Installez les dépendances backend avec Composer :
+   ```bash
+   composer install
+   ```
+3. Installez les dépendances frontend (incluant Tailwind CSS) :
+   ```bash
+   npm install
+   ```
+4. Activez MySQL et configurez la base de données :
+   - Option 1 : Exécutez la commande suivante pour créer les tables via les migrations :
+     ```bash
+     php spark migrate
+     ```
+   - Option 2 : Importez le fichier SQL inclus dans le projet (`db.sql`).
+5. Lancez le serveur web :
    ```bash
    php spark serve
    ```
@@ -46,3 +57,4 @@ Pour contribuer :
 
 ## Licence
 Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Vous êtes libre de l'utiliser et de le modifier.
+
