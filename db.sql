@@ -1,4 +1,4 @@
-CREATE TABLE Users (
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cin VARCHAR(20) UNIQUE NOT NULL,
     cne VARCHAR(20) UNIQUE DEFAULT NULL,
@@ -11,20 +11,20 @@ CREATE TABLE Users (
     is_professor BOOLEAN NOT NULL DEFAULT false
 );
 
-CREATE TABLE Courses (
+CREATE TABLE courses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     professor_id INT NOT NULL,
-    FOREIGN KEY (professor_id) REFERENCES Users(id)
+    FOREIGN KEY (professor_id) REFERENCES users(id)
 );
 
-CREATE TABLE StudentCourses (
+CREATE TABLE students_courses (
     student_id INT NOT NULL,
     course_id INT NOT NULL,
     grade DECIMAL(5, 2),
     semester VARCHAR(20) NOT NULL,
-    date DATE NOT NULL DEFAULT CURRENT_DATE,
+    date DATE NOT NULL DEFAULT (CURRENT_DATE),
     PRIMARY KEY (student_id, course_id),
-    FOREIGN KEY (student_id) REFERENCES Users(id),
-    FOREIGN KEY (course_id) REFERENCES Courses(id)
+    FOREIGN KEY (student_id) REFERENCES users(id),
+    FOREIGN KEY (course_id) REFERENCES courses(id)
 );
