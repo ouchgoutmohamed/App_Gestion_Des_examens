@@ -8,20 +8,9 @@ class Student extends User
 {
     public function signup()
     {
-        $data = $this->request()->getPost(['firstName', 'lastName', 'cin', 'cne', 'phone', 'email', 'password', 'confirmPassword']);
+        $data = $this->request()->getPost(['first_name', 'last_name', 'cin', 'cne', 'phone_number', 'email', 'password', 'confirm_password']);
 
-        $rules = [
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'cin' => 'required',
-            'cne' => 'required',
-            'phone' => 'required',
-            'email' => 'required|valid_email|is_unique[users.email]',
-            'password' => 'required|min_length[8]',
-            'confirmPassword' => 'required|matches[password]'
-        ];
-
-        if (!$this->validateData($data, $rules)) {
+        if (!$this->validateData($data, config('Validation')->signup)) {
             return view('register_student', [
                 'errors' => $this->validator->getErrors(),
                 'old' => $data
@@ -36,7 +25,7 @@ class Student extends User
         // Remove confirm_password key before inserting into the database
         $validated_data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-        unset($validated_data['confirmPassword']);
+        unset($validated_data['confirm_password']);
 
         $model->insert($validated_data);
 
