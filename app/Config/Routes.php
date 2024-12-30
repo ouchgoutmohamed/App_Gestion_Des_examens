@@ -9,9 +9,6 @@ use App\Controllers\Student;
 /**
  * @var RouteCollection $routes
  */
-
-$routes->get('/', 'Home::index');
-
 $routes->addRedirect('/', '/login');
 
 // show login and signup pages
