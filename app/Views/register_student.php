@@ -43,11 +43,11 @@
                             <div class="mb-4 flex gap-6">
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="firstName">First Name</label>
-                                    <input id="firstName" name="firstName" class="form-input w-full" type="text" placeholder="Enter your first name" value="<?= esc($old['firstName'] ?? '') ?>">
+                                    <input id="firstName" name="first_name" class="form-input w-full" type="text" placeholder="Enter your first name" value="<?= esc($old['firstName'] ?? '') ?>">
                                 </div>
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="lastName">Last Name</label>
-                                    <input id="lastName" name="lastName" class="form-input w-full" type="text" placeholder="Enter your last name" value="<?= esc($old['lastName'] ?? '') ?>">
+                                    <input id="lastName" name="last_name" class="form-input w-full" type="text" placeholder="Enter your last name" value="<?= esc($old['lastName'] ?? '') ?>">
                                 </div>
                             </div>
 
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="confirmPassword">Confirm Password</label>
-                                    <input id="confirmPassword" name="confirmPassword" class="form-input w-full" type="password" placeholder="Confirm your password">
+                                    <input id="confirmPassword" name="confirm_password" class="form-input w-full" type="password" placeholder="Confirm your password">
                                 </div>
                             </div>
 
