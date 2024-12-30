@@ -1,12 +1,17 @@
 <?php
 
 use CodeIgniter\Router\RouteCollection;
+
 use App\Controllers\User;
 use App\Controllers\Student;
+
 
 /**
  * @var RouteCollection $routes
  */
+
+$routes->get('/', 'Home::index');
+
 $routes->addRedirect('/', '/login');
 
 // show login and signup pages
@@ -19,3 +24,4 @@ $routes->post('/signup', [Student::class, 'signup']);
 
 // handle logout request
 $routes->get('/logout', [User::class, 'logout']);
+
