@@ -47,28 +47,23 @@
                         <h2 class="text-md font-semibold text-gray-800 dark:text-gray-200 mb-6 text-left">
                             Please fill in your details to register as a student
                         </h2>
-
-                        <!-- Display Errors -->
-                        <?php if (isset($errors) && count($errors) > 0): ?>
-                            <div class="mb-4 p-4 bg-red-100 text-red-700 rounded">
-                                <ul>
-                                    <?php foreach ($errors as $error): ?>
-                                        <li><?= esc($error) ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        <?php endif; ?>
-
+                        
                         <form action="<?= site_url('/signup') ?>" method="post">
                             <!-- Full Name Fields -->
                             <div class="mb-4 flex gap-6">
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="firstName">First Name</label>
-                                    <input id="firstName" name="first_name" class="form-input w-full" type="text" placeholder="Enter your first name" value="<?= esc($old['firstName'] ?? '') ?>">
+                                    <input id="firstName" name="first_name" class="form-input w-full" type="text" placeholder="Enter your first name" value="<?= esc(old('first_name')) ?>">
+                                    <?php if (isset($validation) && $validation->hasError('first_name')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('first_name')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="lastName">Last Name</label>
-                                    <input id="lastName" name="last_name" class="form-input w-full" type="text" placeholder="Enter your last name" value="<?= esc($old['lastName'] ?? '') ?>">
+                                    <input id="lastName" name="last_name" class="form-input w-full" type="text" placeholder="Enter your last name" value="<?= esc(old('last_name')) ?>">
+                                    <?php if (isset($validation) && $validation->hasError('last_name')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('last_name')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
@@ -76,11 +71,17 @@
                             <div class="mb-4 flex gap-6">
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="cin">CIN</label>
-                                    <input id="cin" name="cin" class="form-input w-full" type="text" placeholder="Enter your CIN" value="<?= esc($old['cin'] ?? '') ?>">
+                                    <input id="cin" name="cin" class="form-input w-full" type="text" placeholder="Enter your CIN" value="<?= esc(old('cin')) ?>">
+                                    <?php if (isset($validation) && $validation->hasError('cin')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('cin')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="cne">CNE</label>
-                                    <input id="cne" name="cne" class="form-input w-full" type="text" placeholder="Enter your CNE" value="<?= esc($old['cne'] ?? '') ?>">
+                                    <input id="cne" name="cne" class="form-input w-full" type="text" placeholder="Enter your CNE" value="<?= esc(old('cne')) ?>">
+                                    <?php if (isset($validation) && $validation->hasError('cne')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('cne')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
@@ -88,11 +89,17 @@
                             <div class="mb-4 flex gap-6">
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="phoneNumber">Phone Number</label>
-                                    <input id="phoneNumber" name="phone" class="form-input w-full" type="number" placeholder="Enter your phone number" value="<?= esc($old['phone'] ?? '') ?>">
+                                    <input id="phoneNumber" name="phone" class="form-input w-full" type="number" placeholder="Enter your phone number" value="<?= esc(old('phone')) ?>">
+                                    <?php if (isset($validation) && $validation->hasError('phone')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('phone')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="LoggingEmailAddress">Email Address</label>
-                                    <input id="LoggingEmailAddress" name="email" class="form-input w-full" type="email" placeholder="Enter your email" value="<?= esc($old['email'] ?? '') ?>">
+                                    <input id="LoggingEmailAddress" name="email" class="form-input w-full" type="email" placeholder="Enter your email" value="<?= esc(old('email')) ?>">
+                                    <?php if (isset($validation) && $validation->hasError('email')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('email')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
@@ -101,10 +108,16 @@
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="loggingPassword">Password</label>
                                     <input id="loggingPassword" name="password" class="form-input w-full" type="password" placeholder="Enter your password">
+                                    <?php if (isset($validation) && $validation->hasError('password')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('password')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="w-1/2">
                                     <label class="block text-sm font-medium text-gray-600 dark:text-gray-200 mb-2" for="confirmPassword">Confirm Password</label>
                                     <input id="confirmPassword" name="confirm_password" class="form-input w-full" type="password" placeholder="Confirm your password">
+                                    <?php if (isset($validation) && $validation->hasError('confirm_password')): ?>
+                                        <p class="text-red-500 text-sm"><?= esc($validation->getError('confirm_password')) ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
@@ -112,6 +125,7 @@
                                 <button type="submit" class="btn w-full text-white bg-primary">Register</button>
                             </div>
                         </form>
+
 
                         <p class="text-gray-500 dark:text-gray-400 text-center">Already have an account? <a href="<?= site_url('/login') ?>" class="text-primary ms-1"><b>Log In</b></a></p>
                     </div>
