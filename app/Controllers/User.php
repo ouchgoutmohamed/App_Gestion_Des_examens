@@ -8,7 +8,7 @@ class User extends BaseController
 {
     public function login(): string
     {       
-        $data = $this->request()->getPost(['email', 'password']);
+        $data = $this->request->getPost(['email', 'password']);
 
         $rules = [
             'email' => 'required|valid_email',
