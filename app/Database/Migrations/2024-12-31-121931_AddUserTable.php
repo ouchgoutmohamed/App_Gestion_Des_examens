@@ -3,8 +3,9 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
-class CreateUsersTable extends Migration
+class AddUserTable extends Migration
 {
     public function up()
     {
@@ -28,6 +29,7 @@ class CreateUsersTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 100,
                 'null'       => false,
+                'unique'     => true,
             ],
             'phone' => [
                 'type'       => 'VARCHAR',
@@ -43,16 +45,19 @@ class CreateUsersTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 20,
                 'null'       => false,
+                'unique'     => true,
             ],
             'cne' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 20,
-                'null'       => false,
+                'null'       => true,
+                'unique'     => true,
             ],
             'code' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 20,
-                'null'       => false,
+                'null'       => true,
+                'unique'     => true,
             ],
             'is_professor' => [
                 'type'       => 'TINYINT',
@@ -61,16 +66,16 @@ class CreateUsersTable extends Migration
                 'default'    => 0,
             ],
             'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'deleted_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
         ]);
 
