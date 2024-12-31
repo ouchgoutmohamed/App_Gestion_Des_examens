@@ -8,20 +8,9 @@ class Student extends User
 {
     public function signup()
     {
-        $data = $this->request()->getPost(['firstName', 'lastName', 'cin', 'cne', 'phone', 'email', 'password', 'confirmPassword']);
+        $data = $this->request->getPost(['first_name', 'last_name', 'cin', 'cne', 'phone', 'email', 'password', 'confirm_password']);
 
-        $rules = [
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'cin' => 'required',
-            'cne' => 'required',
-            'phone' => 'required',
-            'email' => 'required|valid_email|is_unique[users.email]',
-            'password' => 'required|min_length[8]',
-            'confirmPassword' => 'required|matches[password]'
-        ];
-
-        if (!$this->validateData($data, $rules)) {
+        if (!$this->validateData($data, config('Validation')->signup)) {
             return view('register_student', [
                 'errors' => $this->validator->getErrors(),
                 'old' => $data
@@ -31,13 +20,12 @@ class Student extends User
         // Gets the validated data.
         $validated_data = $this->validator->getValidated();
 
-        $model = model(StudentModel::class);
-
-        // Remove confirm_password key before inserting into the database
         $validated_data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-
-        unset($validated_data['confirmPassword']);
-
+        
+        // Remove confirm_password key before inserting into the database
+        unset($validated_data['confirm_password']);
+        
+        $model = model(StudentModel::class);
         $model->insert($validated_data);
 
         // Retrieve the ID of the newly inserted user
@@ -46,9 +34,10 @@ class Student extends User
         // Set session data
         session()->set([
             'user_id' => $user_id,
+            'is_professor' => false,
             'is_logged_in' => true,
         ]);
 
-        return redirect()->to('/welcome_message');
+        return redirect()->to('welcome_message');
     }
 }

@@ -41,10 +41,11 @@ class User extends BaseController
         // Set session data
         session()->set([
             'user_id' => $user->id,
+            'is_professor' => $user->is_professor,
             'is_logged_in' => true,
         ]);
 
-        return redirect()->to('/welcome_message');
+        return redirect()->to('welcome_message');
     }
 
     public function logout()
@@ -53,6 +54,6 @@ class User extends BaseController
         session()->destroy();
 
         // Redirect to the login page or homepage
-        return redirect()->to('/login');
+        return redirect()->to('login');
     }
 }
