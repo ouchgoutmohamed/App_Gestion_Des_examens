@@ -21,26 +21,40 @@ Une application de gestion des examens avec des fonctionnalités permettant :
 - **Backend** : PHP, CodeIgniter.
 - **Base de Données** : MySQL.
 
-### Étapes
-1. Clonez le projet :
+## Étapes pour Configurer le Projet
+
+1. **Clonez le projet :**
    ```bash
    git clone https://github.com/ouchgoutmohamed/App_Gestion_Des_examens.git
    ```
-2. Installez les dépendances backend avec Composer :
+
+2. **Installez les dépendances backend avec Composer :**
    ```bash
    composer install
    ```
-3. Installez les dépendances frontend (incluant Tailwind CSS) :
+
+3. **Installez les dépendances frontend (incluant Tailwind CSS) :**
    ```bash
    npm install
    ```
-4. Activez MySQL et configurez la base de données :
-   - Option 1 : Exécutez la commande suivante pour créer les tables via les migrations :
-     ```bash
-     php spark migrate
-     ```
-   - Option 2 : Importez le fichier SQL inclus dans le projet (`db.sql`).
-5. Lancez le serveur web :
+
+4. **Activez MySQL et configurez la base de données :**
+
+   - **Créer la base de données :**
+     - Option 1 : Exécutez la commande suivante pour créer la base de données `gestion_exams` :
+       ```bash
+       php spark create:db gestion_exams
+       ```
+     - Option 2 : Créez-la manuellement avec un logiciel comme phpMyAdmin ou MySQL Workbench.
+
+   - **Créer les tables :**
+     - Option 1 : Exécutez la commande suivante pour exécuter les migrations :
+       ```bash
+       php spark migrate
+       ```
+     - Option 2 : Importez le fichier `db.sql` inclus dans le projet.
+
+5. **Lancez le serveur web :**
    ```bash
    php spark serve
    ```
@@ -57,4 +71,3 @@ Pour contribuer :
 
 ## Licence
 Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Vous êtes libre de l'utiliser et de le modifier.
-
