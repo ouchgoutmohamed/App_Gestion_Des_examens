@@ -38,6 +38,6 @@ class Student extends User
             'is_logged_in' => true,
         ]);
 
-        return redirect()->to('welcome_message');
+        return redirect()->to('/dashboard');
     }
 }

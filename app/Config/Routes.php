@@ -22,3 +22,4 @@ $routes->post('/signup', [Student::class, 'signup']);
 // handle logout request
 $routes->get('/logout', [User::class, 'logout']);
 
+$routes->view('/dashboard', 'welcome_message');
