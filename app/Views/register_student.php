@@ -49,6 +49,8 @@
                         </h2>
                         
                         <form action="/signup" method="post">
+                            <?= csrf_field() ?>
+
                             <!-- Full Name Fields -->
                             <div class="mb-4 flex gap-6">
                                 <div class="w-1/2">
