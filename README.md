@@ -1,6 +1,6 @@
 # Exam Management Application
 
-README in: [French](README-FR.md), [English](README-EN.md)
+README in: [French](README-FR.md), [English](README.md)
 
 ## Description
 An exam management application with features allowing:
