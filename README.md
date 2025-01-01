@@ -54,7 +54,13 @@ Une application de gestion des examens avec des fonctionnalités permettant :
        ```
      - Option 2 : Importez le fichier `db.sql` inclus dans le projet.
 
-5. **Lancez le serveur web :**
+5. **Peupler la base de données :**
+   - Exécutez la commande suivante pour insérer des données initiales :
+     ```bash
+     php spark db:seed MainSeeder
+     ```
+
+6. **Lancez le serveur web :**
    ```bash
    php spark serve
    ```
@@ -71,3 +77,4 @@ Pour contribuer :
 
 ## Licence
 Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Vous êtes libre de l'utiliser et de le modifier.
+
