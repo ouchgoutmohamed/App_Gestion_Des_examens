@@ -49,7 +49,13 @@ class AddStudentCourseTable extends Migration
             ],
         ]);
 
+        // Add primary key
         $this->forge->addPrimaryKey(['student_id', 'course_id']);
+
+        // Add unique constraint on student_id and course_id
+        $this->forge->addUniqueKey(['student_id', 'course_id']);
+
+        // Add foreign keys
         $this->forge->addForeignKey('student_id', 'users', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('course_id', 'courses', 'id', 'CASCADE', 'CASCADE');
 
