@@ -1,5 +1,7 @@
 # Application de Gestion des Examens
 
+README en: [Français](README-FR.md), [Anglais](README-EN.md)
+
 ## Description
 Une application de gestion des examens avec des fonctionnalités permettant :
 - La saisie des notes par les professeurs.
