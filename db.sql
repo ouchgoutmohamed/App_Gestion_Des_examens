@@ -25,6 +25,7 @@ CREATE TABLE students_courses (
     semester VARCHAR(20) NOT NULL,
     date DATE NOT NULL DEFAULT (CURRENT_DATE),
     PRIMARY KEY (student_id, course_id),
-    FOREIGN KEY (student_id) REFERENCES users(id),
-    FOREIGN KEY (course_id) REFERENCES courses(id)
+    UNIQUE KEY unique_student_course (student_id, course_id), -- Unique constraint
+    FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

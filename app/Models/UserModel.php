@@ -6,14 +6,14 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table            = 'users';         // Nom de la table
-    protected $primaryKey       = 'id';            // Clé primaire
-    protected $useAutoIncrement = true;            // Auto-incrémentation pour la clé primaire
-    protected $returnType       = 'array';         // Retourner les données sous forme de tableau
-    protected $useSoftDeletes   = false;           // Désactiver les suppressions logiques
+    protected $table = 'users'; // Table name
+    protected $primaryKey = 'id'; // Primary key
+    protected $useAutoIncrement = true; // Auto-increment for the primary key
+    protected $returnType = 'array'; // Return data as an array
+    protected $useSoftDeletes = false; // Disable soft deletes
 
-    // Champs modifiables par le modèle
-    protected $allowedFields    = [
+    // Fields that can be modified by the model
+    protected $allowedFields = [
         'first_name',
         'last_name',
         'email',
@@ -25,11 +25,9 @@ class UserModel extends Model
         'is_professor'
     ];
 
-    // Configuration des timestamps
-    protected $useTimestamps = true;               // Activer les colonnes created_at et updated_at
-    protected $createdField  = 'created_at';       // Champ pour la date de création
-    protected $updatedField  = 'updated_at';       // Champ pour la date de mise à jour
-    protected $deletedField  = 'deleted_at';       // Champ pour la suppression logique (désactivé ici)
-
-    
+    // Timestamp configuration
+    protected $useTimestamps = true;               // Enable created_at and updated_at columns
+    protected $createdField = 'created_at';       // Field for creation date
+    protected $updatedField = 'updated_at';       // Field for update date
+    protected $deletedField = 'deleted_at';       // Field for soft delete (disabled here)
 }
