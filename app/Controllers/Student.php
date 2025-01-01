@@ -28,16 +28,6 @@ class Student extends User
         $model = model(StudentModel::class);
         $model->insert($validated_data);
 
-        // Retrieve the ID of the newly inserted user
-        $user_id = $model->getInsertID();
-
-        // Set session data
-        session()->set([
-            'user_id' => $user_id,
-            'is_professor' => false,
-            'is_logged_in' => true,
-        ]);
-
-        return redirect()->to('/dashboard');
+        return redirect()->to('/login');
     }
 }
