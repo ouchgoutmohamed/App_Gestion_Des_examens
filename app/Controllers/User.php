@@ -45,7 +45,7 @@ class User extends BaseController
             'is_logged_in' => true,
         ]);
 
-        return redirect()->to('/dashboard');
+        return redirect()->to('/student_dashboard');
     }
 
     public function logout()
