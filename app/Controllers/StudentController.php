@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\StudentModel;
 
-class Student extends User
+class StudentController extends UserController
 {
     public function signup()
     {
@@ -25,9 +25,14 @@ class Student extends User
         // Remove confirm_password key before inserting into the database
         unset($validated_data['confirm_password']);
         
-        $model = model(StudentModel::class);
-        $model->insert($validated_data);
+        $result = model(StudentModel::class)->signup($validated_data);
 
+        if(!$result){
+            return view('register_student', [
+                'errors' => ['An error occurred while signing up. Please try again.'],
+                'old' => $data
+            ]);
+        }
         return redirect()->to('/login');
     }
 }
