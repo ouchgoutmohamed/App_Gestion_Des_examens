@@ -2,6 +2,8 @@
 
 namespace App\Database\Seeds;
 
+use App\Enums\Roles;
+use App\Models\RoleModel;
 use CodeIgniter\Database\Seeder;
 use Faker\Factory;
 
@@ -9,6 +11,9 @@ class StudentSeeder extends Seeder
 {
     public function run()
     {
+        $model = new RoleModel();
+        $student_role_id = $model->where('name', Roles::STUDENT->name)->first()['id'];
+
         $faker = Factory::create();
         for ($i = 0; $i < 10; $i++) {
             $data = [
@@ -19,6 +24,7 @@ class StudentSeeder extends Seeder
                 'password' => password_hash('password', PASSWORD_DEFAULT),
                 'cin' => "J".$faker->randomNumber(6),
                 'cne' => "D".$faker->randomNumber(9),
+                'role_id' => $student_role_id,
             ];
             $this->db->table('users')->insert($data);
         }
