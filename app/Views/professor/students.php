@@ -85,7 +85,7 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">mohamedouchgout@gmail.com</td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">066666666</td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <a class="text-primary hover:text-sky-700" href="/update_grades"><button type="button" class="btn bg-primary text-white">View grades</button></a>
+                                                        <a class="text-primary hover:text-sky-700" href="/update_grades"><button type="button" class="btn bg-primary text-white">Voir Notes</button></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -94,7 +94,7 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">abdallahradfi@gmail.com</td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">066666666</td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <a class="text-primary hover:text-sky-700" href="/update_grades"><button type="button" class="btn bg-primary text-white">View grades</button></a>
+                                                        <a class="text-primary hover:text-sky-700" href="/update_grades"><button type="button" class="btn bg-primary text-white">Voir Notes</button></a>
                                                     </td>
                                                 </tr>
                                             

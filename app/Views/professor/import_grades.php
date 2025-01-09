@@ -36,7 +36,7 @@
 
 <!-- Page Title Start -->
 <div class="flex justify-between items-center mb-6">
-    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Listes des Modules</h4>
+    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Importer des notes pour chaque module</h4>
 
     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
         <div class="flex items-center gap-2">
@@ -60,7 +60,7 @@
                     <div class="col-span-1">
                         <div class="card">
                             <div class="card-header flex justify-between items-center">
-                                <h4 class="card-title">Modules</h4>
+                                <h4 class="card-title">Listes des Modules</h4>
                             </div>
 
                             <div class="py-6">
