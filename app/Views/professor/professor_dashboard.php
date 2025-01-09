@@ -6,7 +6,7 @@
     <title>Dashboard | ExamManager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="App de gestion des examens" name="description">
-
+ 
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -36,7 +36,7 @@
 
                 <!-- Page Title Start -->
                 <div class="flex justify-between items-center mb-6">
-                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Welcome Mohamed Ouchgout!</h4>
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Welcome AHMED ELHIBA MAOULAININ!</h4>
 
                     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
                         <div class="flex items-center gap-2">
@@ -65,7 +65,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">General average for current semester</h4>
+                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Total of students</h4>
                                                 <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">12:00</p>
                                             </div>
                                         </div>
@@ -94,7 +94,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Reclamations</h4>
+                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Number of courses</h4>
                                                 <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">3</p>
                                             </div>
                                         </div>
@@ -117,143 +117,6 @@
                     </div>
 
                 </div> <!-- Grid End -->
-
-                <div class="grid 2xl:grid-cols-4 md:grid-cols-2 gap-6">
-                    <div class="col-span-1">
-                        <div class="card">
-                            <div class="card-header flex justify-between items-center">
-                                <h4 class="card-title">Recent grades</h4>
-                            </div>
-
-                            <div class="py-6">
-                                <div class="px-6" data-simplebar style="max-height: 304px;">
-                                    <div class="space-y-3 divide-y divide-gray-200 dark:divide-gray-700">
-                                        <!-- Grade 1 -->
-                                        <div class="flex items-center">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <h5 class="font-semibold text-gray-600 dark:text-gray-400">Génie logicielle avancée</h5>
-                                                    <div>05.00</div>   
-                                                </div>
-                                                <div class="flex items-center gap-2">
-                                                    <div>15/02/2025</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Grade 2 -->
-                                        <div class="flex items-center py-4">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <h5 class="font-semibold text-gray-600 dark:text-gray-400">Math</h5>
-                                                    <div>02.00</div>   
-                                                </div>
-                                                <div class="flex items-center gap-2">
-                                                    <div>21/02/2025</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Grade 3 -->
-                                        <div class="flex items-center py-4">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <h5 class="font-semibold text-gray-600 dark:text-gray-400">Soft Skills</h5>
-                                                    <div>20.00</div>   
-                                                </div>
-                                                <div class="flex items-center gap-2">
-                                                    <div>15/02/2025</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-span-1">
-                        <div class="card">
-                            <div class="card-header flex justify-between items-center">
-                                <h4 class="card-title">Recent Reclamations</h4>
-                            </div>
-
-                            <div class="py-6">
-                                <div class="px-6" data-simplebar style="max-height: 304px;">
-                                    <div class="space-y-3 divide-y divide-gray-200 dark:divide-gray-700">
-                                        
-                                        <!-- Reclamation 1 -->
-                                        <div class="flex items-center">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <h5 class="font-semibold text-gray-600 dark:text-gray-400">Reclamation 1</h5>
-                                                    <div class="text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded-full text-sm font-medium">
-                                                        Pending
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center gap-2 mt-2">
-                                                    <div class="text-gray-500 text-sm">Submitted on: 15/02/2025</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Reclamation 2 -->
-                                        <div class="flex items-center pt-3">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <h5 class="font-semibold text-gray-600 dark:text-gray-400">Reclamation 2</h5>
-                                                    <div class="text-green-600 bg-green-100 px-2 py-0.5 rounded-full text-sm font-medium">
-                                                        Resolved
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center gap-2 mt-2">
-                                                    <div class="text-gray-500 text-sm">Submitted on: 10/02/2025</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Reclamation 3 -->
-                                        <div class="flex items-center pt-3">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <h5 class="font-semibold text-gray-600 dark:text-gray-400">Reclamation 3</h5>
-                                                    <div class="text-red-600 bg-red-100 px-2 py-0.5 rounded-full text-sm font-medium">
-                                                        Rejected
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center gap-2 mt-2">
-                                                    <div class="text-gray-500 text-sm">Submitted on: 05/02/2025</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </main>
-
-            <!-- Include the header -->
-            <?= view('professor/components/footer'); ?>
-
-        </div>
-
-    </div>
-
-
-    <!-- Plugin Js -->
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/libs/%40frostui/tailwindcss/frostui.js"></script>
-
-    <!-- App Js -->
-    <script src="assets/js/app.js"></script>
-
-    <!-- Apexcharts js -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-
-    <!-- Dashboard Project Page js -->
-    <script src="assets/js/pages/dashboard.js"></script>
 
 </body>
 
