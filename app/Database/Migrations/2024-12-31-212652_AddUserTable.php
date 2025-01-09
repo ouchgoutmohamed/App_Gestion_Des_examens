@@ -59,11 +59,11 @@ class AddUserTable extends Migration
                 'null'       => true,
                 'unique'     => true,
             ],
-            'is_professor' => [
-                'type'       => 'TINYINT',
+            'role_id' => [
+                'type'       => 'INT',
                 'constraint' => 1,
                 'null'       => false,
-                'default'    => 0,
+                
             ],
             'created_at' => [
                 'type'    => 'TIMESTAMP',
@@ -81,6 +81,9 @@ class AddUserTable extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->createTable('users');
+
+        // Add foreign keys
+        $this->forge->addForeignKey('role_id', 'roles', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
