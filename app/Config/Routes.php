@@ -25,3 +25,6 @@ $routes->get('/logout', [User::class, 'logout']);
 $routes->view('/student_dashboard', 'student/student_dashboard');
 $routes->view('/results', 'student/results');
 $routes->view('/professor_dashboard', 'professor/professor_dashboard');
+$routes->view('/import_grades', 'professor/import_grades');
+$routes->view('/students', 'professor/students');
+$routes->view('/update_grades', 'professor/update_grades');

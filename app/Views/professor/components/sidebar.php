@@ -27,7 +27,7 @@
         <li class="menu-title">Menu</li>
 
         <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link active">
+            <a href="/professor_dashboard" class="menu-link active">
                 <span class="menu-icon"><i class="mgc_home_3_line"></i></span>
                 <span class="menu-text"> Dashboard </span>
             </a>
@@ -36,14 +36,17 @@
         <li class="menu-title">Apps</li>
 
         <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link">
+            <a href="/import_grades" class="menu-link">
                 <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
                 <span class="menu-text"> Gestion des notes</span>
             </a>
         </li>
-
-
-       
+        <li class="menu-item">
+            <a href="/students" class="menu-link">
+                <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
+                <span class="menu-text"> Etudiants</span>
+            </a>
+        </li>
     </ul>
 
 </div>
