@@ -1,7 +1,7 @@
 <div class="app-menu">
 
 <!-- Sidenav Brand Logo -->
-<a href="index.html" class="logo-box">
+<a href="avascript:void(0)" class="logo-box">
     <!-- Light Brand Logo -->
     <div class="logo-light">
         <img src="assets/images/logo-light.png" class="logo-lg h-6" alt="Light logo">
@@ -38,18 +38,10 @@
         <li class="menu-item">
             <a href="javascript:void(0)" class="menu-link">
                 <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
-                <span class="menu-text"> Grades</span>
+                <span class="menu-text"> Gestion des notes</span>
             </a>
         </li>
 
-
-        <li class="menu-item">
-            <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
-                <span class="menu-icon"><i class="mgc_building_2_line"></i></span>
-                <span class="menu-text"> Reclamations </span>
-            </a>
-
-        </li>
 
        
     </ul>

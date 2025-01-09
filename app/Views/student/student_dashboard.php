@@ -25,12 +25,12 @@
     <div class="flex wrapper">
 
         <!-- Include the sidebar -->
-        <?= view('components/sidebar'); ?>
+        <?= view('student/components/sidebar'); ?>
 
         <div class="page-content">
         
             <!-- Include the header -->
-            <?= view('components/header'); ?>
+            <?= view('student/components/header'); ?>
 
             <main class="flex-grow p-6">
 
@@ -234,7 +234,7 @@
             </main>
 
             <!-- Include the header -->
-            <?= view('components/footer'); ?>
+            <?= view('student/components/footer'); ?>
 
         </div>
 
