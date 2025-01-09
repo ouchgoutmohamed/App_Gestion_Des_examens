@@ -23,3 +23,5 @@ $routes->post('/signup', [Student::class, 'signup']);
 $routes->get('/logout', [User::class, 'logout']);
 
 $routes->view('/student_dashboard', 'student/student_dashboard');
+$routes->view('/results', 'student/results');
+$routes->view('/professor_dashboard', 'professor/professor_dashboard');
