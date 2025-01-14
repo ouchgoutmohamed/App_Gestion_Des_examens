@@ -34,7 +34,7 @@
                 <?php if (session()->getFlashdata('error')) : ?>
                     <p class="text-base text-gray-600 dark:text-gray-300"><?= session()->getFlashdata('error'); ?></p>
                 <?php endif; ?>
-                <a href="/" class="text-base font-medium text-primary"> Go back</a>
+                <a href="/" class="text-base font-medium text-primary"> Go back home</a>
             </div>
         </div>
     </div>
