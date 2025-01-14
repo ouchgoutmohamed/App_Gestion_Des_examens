@@ -104,8 +104,13 @@
                                                         </h5>
                                                         <!-- Actions -->
                                                         <div class="flex gap-2">
-                                                            <button type="button" class="btn bg-primary text-white">Import</button>
-                                                            <button type="button" class="btn bg-primary text-white">Export</button>
+                                                            <div class="flex justify-center ali">
+                                                                <label for="file-upload" class="btn w-full text-white bg-primary">
+                                                                    Import
+                                                                </label>
+                                                                <input id="file-upload" type="file" class="hidden" />
+                                                            </div>
+                                                                <button type="button" class="btn bg-primary text-white">Export</button>
                                                             <a href="/students/<?= esc($course['id']); ?>">
                                                                 <button type="button" class="btn bg-primary text-white">Voir Etudiants</button>
                                                             </a>

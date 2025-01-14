@@ -49,4 +49,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // show unauthorized page (403 status code)
     $routes->view('/unauthorized', 'unauthorized');
+
+    // show 404 page
+    $routes->set404Override(function() {
+        return view('errors/404'); 
+    });
 });
