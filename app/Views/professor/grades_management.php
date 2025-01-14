@@ -36,7 +36,7 @@
 
 <!-- Page Title Start -->
 <div class="flex justify-between items-center mb-6">
-    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Importer des notes pour chaque module</h4>
+    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Gestion des Notes</h4>
 
     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
         <div class="flex items-center gap-2">
@@ -56,7 +56,38 @@
 </div>
 <!-- Page Title End -->
 
-    <div class="">
+                    <div class="flex flex-col gap-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="flex justify-between items-center">
+                                    <h4 class="card-title">Informations Académiques</h4>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid lg:grid-cols-3 gap-6">     
+                                    <div>
+                                        <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Année académique</label>
+                                        <select class="form-select" id="example-select">
+                                            <option>2024/2025</option>
+                                            <option>2023/2024</option>
+                                            <option>2022/2023</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Semestre</label>
+                                        <select class="form-select" id="example-select">
+                                            <option>S1</option>
+                                            <option>S2</option>
+                                            <option>S3</option>
+                                            <option>S4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div> <!-- end card -->
+                    </div>
+
                     <div class="col-span-1">
                         <div class="card">
                             <div class="card-header flex justify-between items-center">
@@ -76,7 +107,8 @@
                                                     </div>
                                                     <div>
                                                     <button type="button" class="btn bg-primary text-white">Import</button>
-                                                    <button type="button" class="btn bg-primary text-white">Export</button>           
+                                                    <button type="button" class="btn bg-primary text-white">Export</button>        
+                                                    <a href="/students"><button type="button" class="btn bg-primary text-white">Voir Etudiants</button></a>  
                                                     </div>
                                                     </div>
                                                 
@@ -93,7 +125,7 @@
                                                     <div>
                                                     <button type="button" class="btn bg-primary text-white">Import</button>
                                                     <button type="button" class="btn bg-primary text-white">Export</button>
-    
+                                                    <a href="/students"><button type="button" class="btn bg-primary text-white">Voir Etudiants</button></a>
                                                     </div>
                                              </div>
 
@@ -105,7 +137,6 @@
                         </div>
                     </div>
 
-                </div>
 </main>
 
             <!-- Include the header -->

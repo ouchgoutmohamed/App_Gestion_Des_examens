@@ -36,15 +36,9 @@
         <li class="menu-title">Apps</li>
 
         <li class="menu-item">
-            <a href="/import_grades" class="menu-link">
+            <a href="/grades_management" class="menu-link">
                 <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
                 <span class="menu-text"> Gestion des notes</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="/students" class="menu-link">
-                <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
-                <span class="menu-text"> Etudiants</span>
             </a>
         </li>
     </ul>
