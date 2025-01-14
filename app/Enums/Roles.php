@@ -17,4 +17,14 @@ enum Roles: string
             self::STUDENT => 3,
         };
     }
+
+    public static function fromId(int $id): ?self
+    {
+        return match ($id) {
+            1 => self::ADMIN,
+            2 => self::PROFESSOR,
+            3 => self::STUDENT,
+            default => null, // Return null if the ID does not match any role
+        };
+    }
 }

@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 
 use App\Controllers\UserController;
 use App\Controllers\StudentController;
+use App\Enums\Roles;
 
 
 /**
@@ -20,18 +21,30 @@ $routes->view('/signup', 'register_student');
 $routes->post('/login', [UserController::class, 'login']);
 $routes->post('/signup', [StudentController::class, 'signup']);
 
-// handle logout request
-$routes->get('/logout', [UserController::class, 'logout']);
 
-// show student's dashboard
-$routes->view('/student_dashboard', 'student/student_dashboard');
+// goup of routes with auth filter
+$routes->group('', ['filter' => 'auth'], function ($routes) {
 
-// show professor's dashboard
-$routes->view('/professor_dashboard', 'professor/professor_dashboard');
+    // professor's routes
+    $routes->group('', ['filter' => 'role:' . Roles::PROFESSOR->value], function ($routes) {
+        // show professor's dashboard
+        $routes->view('/professor_dashboard', 'professor/professor_dashboard');
 
-// gets the courses that are taught by the logged in professor
-$routes->get('/grades_management', [CourseController::class, 'get_courses']);
+        // gets the courses that are taught by the logged in professor
+        $routes->get('/grades_management', [CourseController::class, 'get_courses']);
 
-$routes->view('/results', 'student/results');
-$routes->view('/students', 'professor/students');
-$routes->view('/update_grades', 'professor/update_grades');
+        $routes->view('/students', 'professor/students');
+        $routes->view('/update_grades', 'professor/update_grades');
+    });
+
+    // studnet's routes
+    $routes->group('', ['filter' => 'role:' . Roles::STUDENT->value], function ($routes) {
+        // handle logout request
+        $routes->get('/logout', [UserController::class, 'logout']);
+
+        // show student's dashboard
+        $routes->view('/student_dashboard', 'student/student_dashboard');
+
+        $routes->view('/results', 'student/results');
+    });
+});
