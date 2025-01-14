@@ -22,7 +22,7 @@ class UserModel extends Model
         'cin',
         'cne',
         'code',
-        'is_professor'
+        'role_id',
     ];
 
     // Timestamp configuration

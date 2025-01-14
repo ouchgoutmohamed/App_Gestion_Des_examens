@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\RoleModel;
+use App\Enums\Roles;
 use App\Models\UserModel;
 
 class UserController extends BaseController
@@ -45,8 +45,7 @@ class UserController extends BaseController
             'is_logged_in' => true,
         ]);
         
-        $role_model = model(RoleModel::class);
-        if($role_model->is_professor($user['role_id'])){
+        if(Roles::PROFESSOR->getId() == $user['role_id']){
             return redirect()->to('/professor_dashboard');
         }
         return redirect()->to('/student_dashboard');

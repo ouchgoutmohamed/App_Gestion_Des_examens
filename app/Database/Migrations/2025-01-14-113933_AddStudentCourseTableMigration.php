@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use CodeIgniter\Database\RawSql;
 
-class AddStudentCourseTable extends Migration
+class AddStudentCourseTableMigration extends Migration
 {
     public function up()
     {
