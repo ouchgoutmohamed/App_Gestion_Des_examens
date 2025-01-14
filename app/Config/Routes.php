@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CourseController;
 use CodeIgniter\Router\RouteCollection;
 
 use App\Controllers\UserController;
@@ -22,9 +23,15 @@ $routes->post('/signup', [StudentController::class, 'signup']);
 // handle logout request
 $routes->get('/logout', [UserController::class, 'logout']);
 
+// show student's dashboard
 $routes->view('/student_dashboard', 'student/student_dashboard');
-$routes->view('/results', 'student/results');
+
+// show professor's dashboard
 $routes->view('/professor_dashboard', 'professor/professor_dashboard');
-$routes->view('/import_grades', 'professor/import_grades');
+
+// gets the courses that are taught by the logged in professor
+$routes->get('/grades_management', [CourseController::class, 'get_courses']);
+
+$routes->view('/results', 'student/results');
 $routes->view('/students', 'professor/students');
 $routes->view('/update_grades', 'professor/update_grades');
