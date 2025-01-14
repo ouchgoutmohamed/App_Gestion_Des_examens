@@ -34,105 +34,98 @@
 
             <main class="flex-grow p-6">
 
-<!-- Page Title Start -->
-<div class="flex justify-between items-center mb-6">
-    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Gestion des Notes</h4>
+                <!-- Page Title Start -->
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Gestion des Notes</h4>
 
-    <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
-        <div class="flex items-center gap-2">
-            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
-        </div>
+                    <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
+                        <div class="flex items-center gap-2">
+                            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
+                        </div>
 
-        <div class="flex items-center gap-2">
-            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-            <a href="/grades_management" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Gestion des Notes</a>
-        </div>
-    </div>
-</div>
-<!-- Page Title End -->
-
-                    <div class="flex flex-col gap-6 mb-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="card-title">Informations Académiques</h4>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <div class="grid lg:grid-cols-3 gap-6">     
-                                    <div>
-                                        <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Année académique</label>
-                                        <select class="form-select" id="example-select">
-                                            <option>2024/2025</option>
-                                            <option>2023/2024</option>
-                                            <option>2022/2023</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Semestre</label>
-                                        <select class="form-select" id="example-select">
-                                            <option>S1</option>
-                                            <option>S2</option>
-                                            <option>S3</option>
-                                            <option>S4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                        </div> <!-- end card -->
+                        <div class="flex items-center gap-2">
+                            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                            <a href="/grades_management" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Gestion des Notes</a>
+                        </div>
                     </div>
+                </div>
+                <!-- Page Title End -->
 
-                    <div class="col-span-1">
-                        <div class="card">
-                            <div class="card-header flex justify-between items-center">
-                                <h4 class="card-title">Listes des Modules</h4>
+                <div class="flex flex-col gap-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="flex justify-between items-center">
+                                <h4 class="card-title">Informations Académiques</h4>
                             </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid lg:grid-cols-3 gap-6">     
+                                <div>
+                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Année académique</label>
+                                    <select class="form-select" id="example-select">
+                                        <option>2024/2025</option>
+                                        <option>2023/2024</option>
+                                        <option>2022/2023</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Semestre</label>
+                                    <select class="form-select" id="example-select">
+                                        <option>S1</option>
+                                        <option>S2</option>
+                                        <option>S3</option>
+                                        <option>S4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div> <!-- end card -->
+                </div>
 
-                            <div class="py-6">
-                                <div class="px-6" data-simplebar style="max-height: 304px;">
-                                    <div class="space-y-3 divide-y divide-gray-200 dark:divide-gray-700">
+                <div class="col-span-1">
+                    <div class="card">
+                        <div class="card-header flex justify-between items-center">
+                            <h4 class="card-title">Listes des Modules</h4>
+                        </div>
 
-                                        <!-- Grade 2 -->
-                                        <div class="flex items-center py-4">
-                                            <div class="w-full overflow-hidden">
-                                                <div class="flex justify-between">
-                                                    <div class="flex justify-between">
-                                                        <h5 class="font-semibold text-gray-600 dark:text-gray-400">Design Thinking</h5> 
+                        <div class="py-6">
+                            <div class="px-6" data-simplebar style="max-height: 304px;">
+                                <div class="space-y-3 divide-y divide-gray-200 dark:divide-gray-700">
+
+                                    <?php if (!empty($courses)): ?>
+                                        <?php foreach ($courses as $course): ?>
+                                            <div class="flex items-center py-4">
+                                                <div class="w-full overflow-hidden">
+                                                    <div class="flex justify-between items-center">
+                                                        <!-- Course Title -->
+                                                        <h5 class="font-semibold text-gray-600 dark:text-gray-400">
+                                                            <?= esc($course['title']); ?>
+                                                        </h5>
+                                                        <!-- Actions -->
+                                                        <div class="flex gap-2">
+                                                            <button type="button" class="btn bg-primary text-white">Import</button>
+                                                            <button type="button" class="btn bg-primary text-white">Export</button>
+                                                            <a href="/students/<?= esc($course['id']); ?>">
+                                                                <button type="button" class="btn bg-primary text-white">Voir Etudiants</button>
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                    <button type="button" class="btn bg-primary text-white">Import</button>
-                                                    <button type="button" class="btn bg-primary text-white">Export</button>        
-                                                    <a href="/students"><button type="button" class="btn bg-primary text-white">Voir Etudiants</button></a>  
-                                                    </div>
-                                                    </div>
-                                                
-                                                
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- Grade 3 -->
-                                        <div class="flex items-center py-4">
-                                            <div class="w-full overflow-hidden">
-                                            <div class="flex justify-between">
-                                                    <div class="flex justify-between">
-                                                        <h5 class="font-semibold text-gray-600 dark:text-gray-400">GLA</h5> 
-                                                    </div>
-                                                    <div>
-                                                    <button type="button" class="btn bg-primary text-white">Import</button>
-                                                    <button type="button" class="btn bg-primary text-white">Export</button>
-                                                    <a href="/students"><button type="button" class="btn bg-primary text-white">Voir Etudiants</button></a>
-                                                    </div>
-                                             </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <p class="text-gray-600 dark:text-gray-400 text-center">Aucun module disponible.</p>
+                                    <?php endif; ?>
 
-                                            </div>
-                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-</main>
+
+            </main>
 
             <!-- Include the header -->
             <?= view('professor/components/footer'); ?>
