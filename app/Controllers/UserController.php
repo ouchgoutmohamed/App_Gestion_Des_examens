@@ -41,7 +41,7 @@ class UserController extends BaseController
         // Set session data
         session()->set([
             'user_id' => $user['id'],
-            'is_professor' => $user['role_id'],
+            'role' => Roles::fromId($user['role_id']),
             'is_logged_in' => true,
         ]);
         
