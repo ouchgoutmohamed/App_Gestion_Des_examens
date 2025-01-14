@@ -55,7 +55,7 @@
 
                             <!-- alert -->
                             <?php if (isset($error)): ?>
-                                <div class="text-center bg-red-100 text-red-800 py-4 rounded-lg mb-4 text-lg">
+                                <div class="text-center bg-red-100 text-red-800 py-4 rounded-lg mb-4 text-md">
                                     <?= esc($error) ?>
                                 </div>
                             <?php endif; ?>
