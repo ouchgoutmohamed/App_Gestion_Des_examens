@@ -30,8 +30,8 @@ $routes->view('/student_dashboard', 'student/student_dashboard');
 $routes->view('/professor_dashboard', 'professor/professor_dashboard');
 
 // gets the courses that are taught by the logged in professor
-$routes->get('/grades_management', [CourseController::class, 'get_courses']);
+// $routes->get('/grades_management', [CourseController::class, 'get_courses']);
+$routes->view('/grades_management', 'professor/grades_management');
 
 $routes->view('/results', 'student/results');
 $routes->view('/students', 'professor/students');
-$routes->view('/update_grades', 'professor/update_grades');
