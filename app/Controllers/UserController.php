@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\RoleModel;
+use App\Enums\Roles;
 use App\Models\UserModel;
 
 class UserController extends BaseController
@@ -41,7 +41,7 @@ class UserController extends BaseController
         // Set session data
         session()->set([
             'user_id' => $user['id'],
-            'is_professor' => $user['role_id'],
+            'role' => Roles::fromId($user['role_id']),
             'is_logged_in' => true,
         ]);
 
@@ -49,8 +49,7 @@ class UserController extends BaseController
         return redirect()->to('/professor_dashboard');
 
         
-        $role_model = model(RoleModel::class);
-        if($role_model->is_professor($user['role_id'])){
+        if(Roles::PROFESSOR->getId() == $user['role_id']){
             return redirect()->to('/professor_dashboard');
         }
         return redirect()->to('/student_dashboard');

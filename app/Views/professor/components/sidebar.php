@@ -1,7 +1,7 @@
 <div class="app-menu">
 
 <!-- Sidenav Brand Logo -->
-<a href="avascript:void(0)" class="logo-box">
+<a href="/professor_dashboard" class="logo-box">
     <!-- Light Brand Logo -->
     <div class="logo-light">
         <img src="assets/images/logo-light.png" class="logo-lg h-6" alt="Light logo">
@@ -29,22 +29,16 @@
         <li class="menu-item">
             <a href="/professor_dashboard" class="menu-link active">
                 <span class="menu-icon"><i class="mgc_home_3_line"></i></span>
-                <span class="menu-text"> Dashboard </span>
+                <span class="menu-text"> Tableau de bord </span>
             </a>
         </li>
 
-        <li class="menu-title">Apps</li>
+        <li class="menu-title">Pages</li>
 
         <li class="menu-item">
-            <a href="/import_grades" class="menu-link">
+            <a href="/grades_management" class="menu-link">
                 <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
-                <span class="menu-text"> Gestion des notes</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="/students" class="menu-link">
-                <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
-                <span class="menu-text"> Etudiants</span>
+                <span class="menu-text"> Gestion des Notes</span>
             </a>
         </li>
     </ul>

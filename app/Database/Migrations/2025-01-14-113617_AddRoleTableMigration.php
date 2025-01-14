@@ -4,8 +4,9 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddRoleTable extends Migration
-{ public function up()
+class AddRoleTableMigration extends Migration
+{
+    public function up()
     {
         $this->forge->addField([
             'id' => [
@@ -17,13 +18,12 @@ class AddRoleTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 50,
                 'null'       => false,
-            ]
-            
+            ]    
         ]);
 
-        $this->forge->addKey('id', true);
-        $this->forge->createTable('roles');
+        $this->forge->addPrimaryKey('id');
 
+        $this->forge->createTable('roles');
     }
 
     public function down()

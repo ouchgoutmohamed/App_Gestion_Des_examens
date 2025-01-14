@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class CourseModel extends Model
 {
-    protected $table = 'users'; // Table name
+    protected $table = 'courses'; // Table name
     protected $primaryKey = 'id'; // Primary key
     protected $useAutoIncrement = true; // Auto-increment for the primary key
     protected $returnType = 'array'; // Return data as an array
@@ -14,16 +14,9 @@ class UserModel extends Model
 
     // Fields that can be modified by the model
     protected $allowedFields = [
-        'first_name',
-        'last_name',
-        'email',
-        'phone',
-        'password',
-        'cin',
-        'cne',
-        'code',
-        'role_id',
-    ];
+        'title',
+        'professor_id',
+    ];   
 
     // Timestamp configuration
     protected $useTimestamps = true;               // Enable created_at and updated_at columns
@@ -31,19 +24,10 @@ class UserModel extends Model
     protected $updatedField = 'updated_at';       // Field for update date
     protected $deletedField = 'deleted_at';       // Field for soft delete (disabled here)
 
-    public function login(string $email, string $password): bool | array{
-        // Find a user with the given email
-        $user = $this->where('email', $email)->first();
-
-        // Check if the user exists and the password is correct
-        if($user !== null && password_verify($password, $user['password'])){
-            return $user;
-        } else {
-            return false;
-        }
-    }
-
-    public function signup(array $data): bool{
-        return $this->insert($data);
+    public function get_courses(int $professor_id): array
+    {
+        return $this->select("courses.id, courses.title")
+            ->where("professor_id", $professor_id)
+            ->findAll();
     }
 }

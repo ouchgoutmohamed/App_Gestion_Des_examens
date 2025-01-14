@@ -25,32 +25,32 @@
     <div class="flex wrapper">
 
         <!-- Include the sidebar -->
-        <?= view('student/components/sidebar'); ?>
+        <?= view('professor/components/sidebar'); ?>
 
         <div class="page-content">
         
             <!-- Include the header -->
-            <?= view('student/components/header'); ?>
+            <?= view('professor/components/header'); ?>
 
             <main class="flex-grow p-6">
 
                 <!-- Page Title Start -->
                 <div class="flex justify-between items-center mb-6">
-                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Mes résultats</h4>
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Gestion des Notes</h4>
 
                     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
                         <div class="flex items-center gap-2">
-                            <a href="/student_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
+                            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
                         </div>
 
                         <div class="flex items-center gap-2">
                             <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                            <a href="/results" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Results</a>
+                            <a href="/grades_management" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Gestion des Notes</a>
                         </div>
                     </div>
                 </div>
                 <!-- Page Title End -->
-                
+
                 <div class="flex flex-col gap-6 mb-4">
                     <div class="card">
                         <div class="card-header">
@@ -83,54 +83,52 @@
                     </div> <!-- end card -->
                 </div>
 
-                <div class="flex flex-col gap-6 mt-7">
+                <div class="col-span-1">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="flex justify-between items-center">
-                                <h4 class="card-title">Suivi des Notes</h4>
+                        <div class="card-header flex justify-between items-center">
+                            <h4 class="card-title">Listes des Modules</h4>
+                        </div>
+
+                        <div class="py-6">
+                            <div class="px-6" data-simplebar style="max-height: 304px;">
+                                <div class="space-y-3 divide-y divide-gray-200 dark:divide-gray-700">
+
+                                    <?php if (!empty($courses)): ?>
+                                        <?php foreach ($courses as $course): ?>
+                                            <div class="flex items-center py-4">
+                                                <div class="w-full overflow-hidden">
+                                                    <div class="flex justify-between items-center">
+                                                        <!-- Course Title -->
+                                                        <h5 class="font-semibold text-gray-600 dark:text-gray-400">
+                                                            <?= esc($course['title']); ?>
+                                                        </h5>
+                                                        <!-- Actions -->
+                                                        <div class="flex gap-2">
+                                                            <button type="button" class="btn bg-primary text-white">Import</button>
+                                                            <button type="button" class="btn bg-primary text-white">Export</button>
+                                                            <a href="/students/<?= esc($course['id']); ?>">
+                                                                <button type="button" class="btn bg-primary text-white">Voir Etudiants</button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <p class="text-gray-600 dark:text-gray-400 text-center">Aucun module disponible.</p>
+                                    <?php endif; ?>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">  
-                                <div class="border rounded-lg shadow-lg overflow-hidden dark:border-gray-700 dark:shadow-gray-900">
-                                    <table class="w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                        <thead class="bg-gray-50 dark:bg-gray-700">
-                                            <tr>
-                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Module</th>
-                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Note</th>
-                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Decision</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Design Thinking</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">02.00</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">NV</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">GLA</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">04.00</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">NV</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Francais</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">20.00</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">V</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>                              
-                        </div>
-                    </div> <!-- end card -->
-
-                    
-
+                    </div>
                 </div>
+
+
             </main>
 
             <!-- Include the header -->
-            <?= view('student/components/footer'); ?>
+            <?= view('professor/components/footer'); ?>
 
         </div>
 

@@ -44,9 +44,4 @@ class RoleModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function is_professor(int $role_id): bool
-    {
-        return $this->where('id', $role_id)->role_id === Roles::PROFESSOR->name;
-    }
 }
