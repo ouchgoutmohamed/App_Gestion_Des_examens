@@ -3,7 +3,6 @@
 namespace App\Database\Seeds;
 
 use App\Enums\Roles;
-use App\Models\RoleModel;
 use CodeIgniter\Database\Seeder;
 use Faker\Factory;
 
@@ -11,9 +10,7 @@ class CourseSeeder extends Seeder
 {
     public function run()
     {
-        $model = new RoleModel();
-        $professor_role_id = $model->where('name', Roles::PROFESSOR->name)->first()['id'];
-
+        $professor_role_id = Roles::PROFESSOR->getId();
 
         $faker = Factory::create();
 

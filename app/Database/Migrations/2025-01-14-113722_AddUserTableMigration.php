@@ -5,10 +5,12 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use CodeIgniter\Database\RawSql;
 
-class AddUserTable extends Migration
+class AddUserTableMigration extends Migration
 {
     public function up()
     {
+        $this->db->disableForeignKeyChecks();
+
         $this->forge->addField([
             'id' => [
                 'type'           => 'INT',
@@ -60,10 +62,8 @@ class AddUserTable extends Migration
                 'unique'     => true,
             ],
             'role_id' => [
-                'type'       => 'INT',
-                'constraint' => 1,
-                'null'       => false,
-                
+                'type'           => 'INT',
+                'unsigned'       => true,
             ],
             'created_at' => [
                 'type'    => 'TIMESTAMP',
@@ -79,11 +79,14 @@ class AddUserTable extends Migration
             ],
         ]);
 
-        $this->forge->addKey('id', true);
-        $this->forge->createTable('users');
-
+        $this->forge->addPrimaryKey("id");
+        
         // Add foreign keys
         $this->forge->addForeignKey('role_id', 'roles', 'id', 'CASCADE', 'CASCADE');
+        
+        $this->db->enableForeignKeyChecks();
+
+        $this->forge->createTable('users');
     }
 
     public function down()

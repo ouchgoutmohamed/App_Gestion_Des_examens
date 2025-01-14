@@ -2,8 +2,8 @@
 
 namespace App\Database\Seeds;
 
-use App\Enums\Roles;
 use CodeIgniter\Database\Seeder;
+use App\Enums\Roles; // Import the Roles enum
 
 class RoleSeeder extends Seeder
 {
@@ -11,7 +11,8 @@ class RoleSeeder extends Seeder
     {
         foreach (Roles::cases() as $role) {
             $data = [
-                'name' => $role->name,
+                'id' => $role->getId(),     // Get ID from the enum
+                'name' => $role->value,    // Get the name from the enum value
             ];
             $this->db->table('roles')->insert($data);
         }

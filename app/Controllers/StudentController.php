@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Enums\Roles;
 use App\Models\StudentModel;
 
 class StudentController extends UserController
@@ -25,6 +26,8 @@ class StudentController extends UserController
         // Remove confirm_password key before inserting into the database
         unset($validated_data['confirm_password']);
         
+        $validated_data["role_id"] = Roles::STUDENT->getId();
+
         $result = model(StudentModel::class)->signup($validated_data);
 
         if(!$result){
