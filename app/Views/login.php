@@ -18,6 +18,22 @@
 
     <!-- Theme Config Js -->
     <script src="assets/js/config.js"></script>
+
+    <style>
+        .alert-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
 </head>
 
 <body>
@@ -59,10 +75,6 @@
                             </div>
 
                             <div class="flex items-center justify-between mb-4">
-                                <!-- <div class="flex items-center">
-                                    <input type="checkbox" class="form-checkbox rounded" id="checkbox-signin">
-                                    <label class="ms-2" for="checkbox-signin">Remember me</label>
-                                </div> -->
                                 <a href="#" class="text-sm text-primary border-b border-dashed border-primary">Forget
                                     Password ?</a>
                             </div>
@@ -80,6 +92,25 @@
         </div>
 
     </div>
+
+    <?php if (session()->getFlashdata('error')) : ?>
+        <div class="alert-fixed" id="alert">
+            <?= session()->getFlashdata('error'); ?>
+        </div>
+    <?php endif; ?>
+
+    <script>
+        // Hide alert after 5 seconds
+        setTimeout(function() {
+            var alert = document.getElementById('alert');
+            if (alert) {
+                alert.style.opacity = 0;
+                setTimeout(function() {
+                    alert.style.display = 'none';
+                }, 300);
+            }
+        }, 3000); 
+    </script>
 
 </body>
 
