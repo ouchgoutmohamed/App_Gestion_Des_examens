@@ -49,3 +49,4 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         $routes->view('/results', 'student/results');
     });
 });
+$routes->view('/unauthorized', 'unauthorized');
