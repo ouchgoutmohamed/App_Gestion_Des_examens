@@ -54,7 +54,7 @@
                 <div class="grid gap-6 mb-6">
                     
                     <div class="2xl:col-span-3">
-                        <div class="grid xl:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+                        <div class="grid  md:grid-cols-2 gap-6 mb-6">
                             <div class="card">
                                 <div class="p-6">
                                     <div class="flex justify-between items-start">
@@ -66,7 +66,7 @@
                                             </div>
                                             <div>
                                                 <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Total of students</h4>
-                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">12:00</p>
+                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">240</p>
                                             </div>
                                         </div>
                                         <div>
@@ -95,7 +95,7 @@
                                             </div>
                                             <div>
                                                 <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Number of courses</h4>
-                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">3</p>
+                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">2</p>
                                             </div>
                                         </div>
                                         <div>
