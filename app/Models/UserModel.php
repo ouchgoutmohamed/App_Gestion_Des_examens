@@ -30,4 +30,20 @@ class UserModel extends Model
     protected $createdField = 'created_at';       // Field for creation date
     protected $updatedField = 'updated_at';       // Field for update date
     protected $deletedField = 'deleted_at';       // Field for soft delete (disabled here)
+
+    public function login(string $email, string $password): bool | array{
+        // Find a user with the given email
+        $user = $this->where('email', $email)->first();
+
+        // Check if the user exists and the password is correct
+        if($user !== null && password_verify($password, $user['password'])){
+            return $user;
+        } else {
+            return false;
+        }
+    }
+
+    public function signup(array $data): bool{
+        return $this->insert($data);
+    }
 }

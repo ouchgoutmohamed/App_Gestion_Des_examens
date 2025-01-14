@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Models\RoleModel;
 use App\Models\UserModel;
 
-class User extends BaseController
+class UserController extends BaseController
 {
     public function login()
     {       
@@ -27,11 +28,10 @@ class User extends BaseController
         // Gets the validated data.
         $validated_data = $this->validator->getValidated();
 
-        $model = model(UserModel::class);
+        // Attempt to login the user
+        $user = model(UserModel::class)->login($validated_data['email'], $validated_data['password']);
 
-        $user = $model->where('email', $validated_data['email'])->first();
-
-        if ($user === null || !password_verify($validated_data['password'], $user['password'])) {
+        if (!$user) {
             return view('login', [
                 'error' => "Invalid Credentials",
                 'old' => $data
@@ -41,11 +41,19 @@ class User extends BaseController
         // Set session data
         session()->set([
             'user_id' => $user['id'],
-            'is_professor' => $user['is_professor'],
+            'is_professor' => $user['role_id'],
             'is_logged_in' => true,
         ]);
 
+
         return redirect()->to('/professor_dashboard');
+
+        
+        $role_model = model(RoleModel::class);
+        if($role_model->is_professor($user['role_id'])){
+            return redirect()->to('/professor_dashboard');
+        }
+        return redirect()->to('/student_dashboard');
     }
 
     public function logout()
