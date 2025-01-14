@@ -9,7 +9,7 @@
                 </button>
 
                 <!-- Topbar Brand Logo -->
-                <a href="/" class="logo-box">
+                <a href="/student_dashboard" class="logo-box">
                     <!-- Light Brand Logo -->
                     <div class="logo-light">
                         <img src="assets/images/logo-light.png" class="logo-lg h-6" alt="Light logo">

@@ -36,16 +36,16 @@
 
                 <!-- Page Title Start -->
                 <div class="flex justify-between items-center mb-6">
-                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Welcome AHMED ELHIBA MAOULAININ!</h4>
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Bienvenu Mohamed!</h4>
 
                     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
                         <div class="flex items-center gap-2">
-                            <a href="javascript:void(0)" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
+                            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
                         </div>
 
                         <div class="flex items-center gap-2">
                             <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                            <a href="javascript:void(0)" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Dashboard</a>
+                            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Tableau de bord</a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Total of students</h4>
+                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Total d'étudiants</h4>
                                                 <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">240</p>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                             </button>
 
                                             <div class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-40 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200" href="/grades_management">
                                                     <i class="mgc_eye_2_fill"></i> View grades
                                                 </a>  
                                             </div>
@@ -94,7 +94,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Number of courses</h4>
+                                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Nombre de cours</h4>
                                                 <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">2</p>
                                             </div>
                                         </div>

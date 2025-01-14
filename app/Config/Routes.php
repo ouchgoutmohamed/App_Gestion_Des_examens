@@ -49,11 +49,4 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         $routes->view('/results', 'student/results');
     });
 });
-
-// gets the courses that are taught by the logged in professor
-// $routes->get('/grades_management', [CourseController::class, 'get_courses']);
-$routes->view('/grades_management', 'professor/grades_management');
-
-$routes->view('/results', 'student/results');
-$routes->view('/students', 'professor/students');
-
+$routes->view('/unauthorized', 'unauthorized');
