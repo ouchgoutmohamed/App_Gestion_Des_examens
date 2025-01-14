@@ -118,6 +118,20 @@
 
                 </div> <!-- Grid End -->
 
+    <!-- Plugin Js -->
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/libs/%40frostui/tailwindcss/frostui.js"></script>
+
+    <!-- App Js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Apexcharts js -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Dashboard Project Page js -->
+    <script src="assets/js/pages/dashboard.js"></script>
+
 </body>
 
 </html>
