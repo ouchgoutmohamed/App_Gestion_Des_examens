@@ -40,17 +40,12 @@
 
     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
         <div class="flex items-center gap-2">
-            <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
+            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
         </div>
 
         <div class="flex items-center gap-2">
             <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-            <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Table</a>
-        </div>
-
-        <div class="flex items-center gap-2">
-            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-            <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Modules</a>
+            <a href="/grades_management" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Gestion des Notes</a>
         </div>
     </div>
 </div>
