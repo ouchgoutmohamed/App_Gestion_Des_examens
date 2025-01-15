@@ -8,16 +8,16 @@
     <meta content="App de gestion des examens" name="description">
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.ico') ?>">
 
     <!-- App css -->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
-
+    <link href="<?= base_url('assets/css/app.min.css') ?>" rel="stylesheet" type="text/css">
+    
     <!-- Icons css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/css/icons.min.css') ?>" rel="stylesheet" type="text/css">
 
     <!-- Theme Config Js -->
-    <script src="assets/js/config.js"></script>
+    <script src="<?= base_url('assets/js/config.js') ?>"></script>
 </head>
 
 <body>
@@ -34,27 +34,27 @@
 
             <main class="flex-grow p-6">
 
-<!-- Page Title Start -->
-<div class="flex justify-between items-center mb-6">
-    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Listes d'étudiants</h4>
+                <!-- Page Title Start -->
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Listes d'étudiants</h4>
 
-    <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
-        <div class="flex items-center gap-2">
-            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
-        </div>
+                    <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
+                        <div class="flex items-center gap-2">
+                            <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
+                        </div>
 
-        <div class="flex items-center gap-2">
-            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-            <a href="/grades_management" class="text-sm font-medium text-slate-700 dark:text-slate-400">Gestion des Notes</a>
-        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                            <a href="/grades_management" class="text-sm font-medium text-slate-700 dark:text-slate-400">Gestion des Notes</a>
+                        </div>
 
-        <div class="flex items-center gap-2">
-            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-            <a href="/students" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Listes d'étudiants</a>
-        </div>
-    </div>
-</div>
-<!-- Page Title End -->
+                        <div class="flex items-center gap-2">
+                            <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                            <a href="/students" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Listes d'étudiants</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Title End -->
 
               
                 <div class="card">
@@ -175,18 +175,18 @@
 
 
     <!-- Plugin Js -->
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/libs/%40frostui/tailwindcss/frostui.js"></script>
+    <script src="<?= base_url('assets/libs/simplebar/simplebar.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/feather-icons/feather.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/@frostui/tailwindcss/frostui.js') ?>"></script>
 
     <!-- App Js -->
-    <script src="assets/js/app.js"></script>
+    <script src="<?= base_url('assets/js/app.js') ?>"></script>
 
     <!-- Apexcharts js -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="<?= base_url('assets/libs/apexcharts/apexcharts.min.js') ?>"></script>
 
     <!-- Dashboard Project Page js -->
-    <script src="assets/js/pages/dashboard.js"></script>
+    <script src="<?= base_url('assets/js/pages/dashboard.js') ?>"></script>
 
 </body>
 

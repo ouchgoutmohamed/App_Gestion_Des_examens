@@ -105,16 +105,22 @@
                                                         <!-- Actions -->
                                                         <div class="flex gap-2">
                                                             <div class="flex justify-center ali">
-                                                                <label for="file-upload" class="btn w-full text-white bg-primary">
-                                                                    Import
-                                                                </label>
-                                                                <input id="file-upload" type="file" class="hidden" />
+                                                                <form action="/courses/<?= esc($course['id']); ?>/import_grades" method="post" enctype="multipart/form-data">
+                                                                    <?= csrf_field(); ?>
+                                                                    <label for="file-upload-<?= esc($course['id']); ?>"
+                                                                        class="btn w-full text-white bg-primary">
+                                                                        Import
+                                                                    </label>
+                                                                    <input id="file-upload-<?= esc($course['id']); ?>" name="excel_file" type="file" class="hidden" />
+                                                                </form>
                                                             </div>
-                                                                <button type="button" class="btn bg-primary text-white">Export</button>
-                                                            <a href="/students/<?= esc($course['id']); ?>">
-                                                                <button type="button" class="btn bg-primary text-white">Voir Etudiants</button>
+                                                            <button type="button"
+                                                                class="btn bg-primary text-white">Export</button>
+                                                            <a href="/courses/<?= esc($course['id']); ?>/students"
+                                                                class="btn bg-primary text-white">
+                                                                Voir Etudiants
                                                             </a>
-                                                        </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,6 +159,20 @@
 
     <!-- Dashboard Project Page js -->
     <script src="assets/js/pages/dashboard.js"></script>
+
+    <script>
+        const file_inputs = document.querySelectorAll('input[type="file"]');
+
+        console.log(file_inputs);
+        
+
+        for (let i = 0; i < file_inputs.length; i++) {
+            file_inputs[i].onchange = (e) => {
+                e.target.parentElement.submit();
+            }
+        }
+
+    </script>
 
 </body>
 
