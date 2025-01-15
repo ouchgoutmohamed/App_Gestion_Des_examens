@@ -17,9 +17,15 @@ class StudentCourseController extends BaseController
 
         // Récupérer les étudiants inscrits à ce cours
         $students = (new StudentCourseModel())->getStudentsByCourse($course_id);
+
+        // Extract course title from the first student entry (if students exist)
+        $course_title = !empty($students) ? $students[0]['title'] : 'Unknown Module';
         
         // Passer les étudiants à la vue
-        return view('professor/students', ['students' => $students]);
+        return view('professor/students', [
+            'students' => $students,
+            'course_title' => $course_title,
+        ]);
     }
 
     public function import_grades($course_id)

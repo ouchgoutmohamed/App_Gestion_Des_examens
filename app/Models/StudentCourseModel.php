@@ -30,9 +30,10 @@ class StudentCourseModel extends Model
     // Méthode pour obtenir tous les cours d'un étudiant
     public function getStudentsByCourse($course_id)
     {
-        return $this->select('students_courses.student_id, students_courses.grade, users.first_name, users.last_name, users.cne')
-            ->join("users", "users.id = students_courses.student_id")
-            ->where('course_id', $course_id)
+        return $this->select('students_courses.student_id, students_courses.grade, users.first_name, users.last_name, users.email, users.cne, courses.title')
+            ->join('users', 'users.id = students_courses.student_id')
+            ->join('courses', 'courses.id = students_courses.course_id') // Join with courses table
+            ->where('students_courses.course_id', $course_id) // Ensure students_courses table is scoped
             ->get()
             ->getResultArray();
     }

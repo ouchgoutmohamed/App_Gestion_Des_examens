@@ -36,8 +36,9 @@
 
                 <!-- Page Title Start -->
                 <div class="flex justify-between items-center mb-6">
-                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Listes d'étudiants</h4>
-
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">
+                        Listes d'étudiants de module : <?= esc($course_title) ?>
+                    </h4>
                     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
                         <div class="flex items-center gap-2">
                             <a href="/professor_dashboard" class="text-sm font-medium text-slate-700 dark:text-slate-400">ExamManager</a>
@@ -56,113 +57,48 @@
                 </div>
                 <!-- Page Title End -->
 
-              
                 <div class="card">
-                        <div class="card-header">
-                            <div class="flex justify-between items-center">
-                                <h4 class="card-title">Etudiants</h4>
-                         
-                            </div>
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h4 class="card-title">Etudiants</h4>
                         </div>
-                        <div class="p-6">
-                            <div class="overflow-x-auto">
-                                <div class="min-w-full inline-block align-middle">
-                                    <div class="border rounded-lg shadow-lg overflow-hidden dark:border-gray-700 dark:shadow-gray-900">
-                                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                            <thead class="bg-gray-50 dark:bg-gray-700">
-                                                <tr>
-                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Full name</th>
-                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">CNE</th>
-                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Email</th>
-                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Note</th>
-                                                    <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                                <tr>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Mohamed ouchgout</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">D2231313131</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">mohamedouchgout@gmail.com</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">02.00</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium ">
-                                                        <div class="flex justify-end">
-                                                            <input value="02.00" type="text" id="simpleinput" class="form-input w-28">
-                                                            <button style="margin-left:10px;" type="button" class="btn bg-primary text-white">Update</button>
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">abdallah radfi</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">D2231313131</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">abdallahradfi@gmail.com</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">01.00</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium ">
-                                                        <div class="flex justify-end">
-                                                            <input value="01.00" type="text" id="simpleinput" class="form-input w-28">
-                                                            <button style="margin-left:10px;" type="button" class="btn bg-primary text-white">Update</button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            
-                                            </tbody>
-                                        </table>
-                                    </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <div class="min-w-full inline-block align-middle">
+                                <div class="border rounded-lg shadow-lg overflow-hidden dark:border-gray-700 dark:shadow-gray-900">
+                                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                        <thead class="bg-gray-50 dark:bg-gray-700">
+                                            <tr>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Full name</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">CNE</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Email</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Note</th>
+                                                <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                        <?php foreach ($students as $student): ?>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"><?= esc($student['first_name']) ?> <?= esc($student['last_name']) ?></td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['cne']) ?></td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['email']) ?></td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['grade']) ?></td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                                    <div class="flex justify-end">
+                                                        <input value="<?= esc($student['grade']) ?>" type="text" class="form-input w-28">
+                                                        <button style="margin-left:10px;" type="button" class="btn bg-primary text-white">Update</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-
-                            <div id="ShadowTableHtml" class="hidden w-full overflow-hidden transition-[height] duration-300">
-                                <pre class="language-html h-56">
-                                    <code>
-                                        &lt;div class=&quot;overflow-x-auto&quot;&gt;
-                                            &lt;div class=&quot;min-w-full inline-block align-middle&quot;&gt;
-                                                &lt;div class=&quot;border rounded-lg shadow-lg overflow-hidden dark:border-gray-700 dark:shadow-gray-900&quot;&gt;
-                                                    &lt;table class=&quot;min-w-full divide-y divide-gray-200 dark:divide-gray-700&quot;&gt;
-                                                        &lt;thead class=&quot;bg-gray-50 dark:bg-gray-700&quot;&gt;
-                                                            &lt;tr&gt;
-                                                                &lt;th scope=&quot;col&quot; class=&quot;px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400&quot;&gt;Name&lt;/th&gt;
-                                                                &lt;th scope=&quot;col&quot; class=&quot;px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400&quot;&gt;Age&lt;/th&gt;
-                                                                &lt;th scope=&quot;col&quot; class=&quot;px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400&quot;&gt;Address&lt;/th&gt;
-                                                                &lt;th scope=&quot;col&quot; class=&quot;px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-gray-400&quot;&gt;Action&lt;/th&gt;
-                                                            &lt;/tr&gt;
-                                                        &lt;/thead&gt;
-                                                        &lt;tbody class=&quot;divide-y divide-gray-200 dark:divide-gray-700&quot;&gt;
-                                                            &lt;tr&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200&quot;&gt;John Brown&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200&quot;&gt;45&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200&quot;&gt;New York No. 1 Lake Park&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-end text-sm font-medium&quot;&gt;
-                                                                    &lt;a class=&quot;text-primary hover:text-sky-700&quot; href=&quot;#&quot;&gt;Delete&lt;/a&gt;
-                                                                &lt;/td&gt;
-                                                            &lt;/tr&gt;
-            
-                                                            &lt;tr&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200&quot;&gt;Jim Green&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200&quot;&gt;27&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200&quot;&gt;London No. 1 Lake Park&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-end text-sm font-medium&quot;&gt;
-                                                                    &lt;a class=&quot;text-primary hover:text-sky-700&quot; href=&quot;#&quot;&gt;Delete&lt;/a&gt;
-                                                                &lt;/td&gt;
-                                                            &lt;/tr&gt;
-            
-                                                            &lt;tr&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200&quot;&gt;Joe Black&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200&quot;&gt;31&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200&quot;&gt;Sidney No. 1 Lake Park&lt;/td&gt;
-                                                                &lt;td class=&quot;px-6 py-4 whitespace-nowrap text-end text-sm font-medium&quot;&gt;
-                                                                    &lt;a class=&quot;text-primary hover:text-sky-700&quot; href=&quot;#&quot;&gt;Delete&lt;/a&gt;
-                                                                &lt;/td&gt;
-                                                            &lt;/tr&gt;
-                                                        &lt;/tbody&gt;
-                                                    &lt;/table&gt;
-                                                &lt;/div&gt;
-                                            &lt;/div&gt;
-                                        &lt;/div&gt;
-                                    </code>
-                                </pre>
-                            </div>
                         </div>
-                    </div> <!-- end card -->
+                    </div>
+                </div> <!-- end card -->
 
 </main>
 
