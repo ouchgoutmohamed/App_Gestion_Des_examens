@@ -70,7 +70,7 @@
                                     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                         <thead class="bg-gray-50 dark:bg-gray-700">
                                             <tr>
-                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Full name</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Nom et prénom</th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">CNE</th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Email</th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Note</th>
@@ -86,19 +86,37 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['grade']) ?></td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                                         <!-- Form for updating the grade -->
-                                                        <form action="/courses/<?= esc($course_id) ?>/students/<?= esc($student['student_id']) ?>/update" method="POST" class="flex">
+                                                        <form action="/courses/<?= esc($course_id) ?>/students/<?= esc($student['student_id']) ?>/update" method="POST" class="flex items-center" onsubmit="return confirmUpdate(event)">
                                                             <!-- CSRF Token -->
                                                             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
 
-                                                            <input type="number" name="grade" value="<?= esc($student['grade']) ?>" class="form-input w-28" min="0" max="20">
-                                                            <button type="submit" class="btn bg-primary text-white" style="margin-left:10px;">Update</button>
-                                                        </form>
+                                                            <div class="flex items-center space-x-3">
+                                                                <input type="number" name="grade" value="<?= esc($student['grade']) ?>" class="form-input w-28 px-3 py-2 text-sm rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" min="0" max="20">
 
+                                                                <!-- Apply space using space-x-3 on the container for better spacing -->
+                                                                <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                                                                    Modifier
+                                                                </button>
+                                                            </div>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
-
+                                        <!-- Custom Confirmation Alert Modal -->
+                                        <div id="confirmationAlert" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+                                            <div class="bg-white p-6 rounded-md shadow-lg w-1/3">
+                                                <h4 class="text-md rounded-md p-2 mb-4">Etes-vous sûr de modifie cette note?</h4>
+                                                <div class="flex justify-end space-x-3">      
+                                                    <button id="confirmButton" class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded bg-primary hover:bg-primary-600 text-white">
+                                                        Confirmer
+                                                    </button>
+                                                    <button id="cancelButton" class="py-2 px-5 inline-flex justify-center items-center gap-2 rounded dark:text-gray-200 border dark:border-slate-700 font-medium hover:bg-slate-100 hover:dark:bg-slate-700 transition-all" data-fc-dismiss type="button">
+                                                        Annuler
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </table>
                                 </div>
                             </div>
@@ -129,6 +147,27 @@
 
     <!-- Dashboard Project Page js -->
     <script src="<?= base_url('assets/js/pages/dashboard.js') ?>"></script>
+
+    <script>
+        // JavaScript function to show the confirmation modal
+        function confirmUpdate(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Show the confirmation modal
+            document.getElementById('confirmationAlert').classList.remove('hidden');
+            
+            // Set up the action for confirming
+            document.getElementById('confirmButton').onclick = function() {
+                event.target.submit(); // Submit the form if confirmed
+                document.getElementById('confirmationAlert').classList.add('hidden'); // Hide the modal
+            };
+            
+            // Set up the action for canceling
+            document.getElementById('cancelButton').onclick = function() {
+                document.getElementById('confirmationAlert').classList.add('hidden'); // Hide the modal
+            };
+        }
+    </script>
 
 </body>
 
