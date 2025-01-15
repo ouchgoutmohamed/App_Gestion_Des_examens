@@ -120,7 +120,7 @@
                                                                 class="btn bg-primary text-white">
                                                                 Voir Etudiants
                                                             </a>
-                                                        </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

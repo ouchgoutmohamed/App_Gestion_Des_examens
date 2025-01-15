@@ -42,7 +42,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         // import grades of students trough an excel file
         $routes->post('/courses/(:num)/import_grades', [StudentCourseController::class, 'import_grades']);
 
-        $routes->view('/update_grades', 'professor/update_grades');
+        // update grades of student
+        $routes->post('/courses/(:num)/students/(:num)/update', [StudentCourseController::class, 'updateGrade']);
+
     });
 
     // studnet's routes
