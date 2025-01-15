@@ -21,11 +21,15 @@ $routes->view('/signup', 'register_student', ['filter' => 'guest']);
 $routes->post('/login', [UserController::class, 'login'], ['filter' => 'guest']);
 $routes->post('/signup', [StudentController::class, 'signup'], ['filter' => 'guest']);
 
+// handle logout request
+$routes->get('/logout', [UserController::class, 'logout']);
+
 // goup of routes with auth filter
 $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // professor's routes
     $routes->group('', ['filter' => 'role:' . Roles::PROFESSOR->value], function ($routes) {
+
         // show professor's dashboard
         $routes->view('/professor_dashboard', 'professor/professor_dashboard');
 
@@ -34,6 +38,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
         // get students list that study this
         $routes->get('/courses/(:num)/students', [StudentCourseController::class,'getStudentsByCourse']);
+
+        // import grades of students trough an excel file
+        $routes->post('/courses/(:num)/import_grades', [StudentCourseController::class, 'import_grades']);
 
         $routes->view('/update_grades', 'professor/update_grades');
     });

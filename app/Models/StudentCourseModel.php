@@ -8,7 +8,7 @@ class StudentCourseModel extends Model
 {
     protected $table = 'students_courses';
     protected $primaryKey = ['student_id', 'course_id'];
-    
+
     // Les champs qui peuvent être insérés ou mis à jour dans la table
     protected $allowedFields = [
         'student_id',
@@ -23,9 +23,9 @@ class StudentCourseModel extends Model
 
     // Spécifier les dates (automatiques pour 'created_at', 'updated_at', et 'deleted_at')
     protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
+    protected $deletedField = 'deleted_at';
 
     // Méthode pour obtenir tous les cours d'un étudiant
     public function getStudentsByCourse($course_id)
@@ -35,5 +35,14 @@ class StudentCourseModel extends Model
             ->where('course_id', $course_id)
             ->get()
             ->getResultArray();
+    }
+
+    public function updateGrade($student_id, $course_id, $grade)
+    {
+        $this->db->table($this->table) // Ensure you're targeting the correct table
+            ->set("grade", $grade) // Set the new grade
+            ->where('student_id', $student_id) // Add condition for student ID
+            ->where('course_id', $course_id) // Add condition for course ID
+            ->update(); // Execute the update query
     }
 }
