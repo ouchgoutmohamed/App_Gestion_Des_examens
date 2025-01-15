@@ -78,21 +78,27 @@
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                        <?php foreach ($students as $student): ?>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"><?= esc($student['first_name']) ?> <?= esc($student['last_name']) ?></td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['cne']) ?></td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['email']) ?></td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['grade']) ?></td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                    <div class="flex justify-end">
-                                                        <input value="<?= esc($student['grade']) ?>" type="text" class="form-input w-28">
-                                                        <button style="margin-left:10px;" type="button" class="btn bg-primary text-white">Update</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
+                                            <?php foreach ($students as $student): ?>
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"><?= esc($student['first_name']) ?> <?= esc($student['last_name']) ?></td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['cne']) ?></td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['email']) ?></td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"><?= esc($student['grade']) ?></td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                                        <!-- Form for updating the grade -->
+                                                        <form action="/courses/<?= esc($course_id) ?>/students/<?= esc($student['student_id']) ?>/update" method="POST" class="flex">
+                                                            <!-- CSRF Token -->
+                                                            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+
+                                                            <input type="number" name="grade" value="<?= esc($student['grade']) ?>" class="form-input w-28" min="0" max="20">
+                                                            <button type="submit" class="btn bg-primary text-white" style="margin-left:10px;">Update</button>
+                                                        </form>
+
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
+
                                     </table>
                                 </div>
                             </div>
