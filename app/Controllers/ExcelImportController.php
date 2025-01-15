@@ -2,27 +2,13 @@
 
 namespace App\Controllers;
 
-use App\Models\StudentCourseModel;
-
-use App\Models\StudentModel;
+use CodeIgniter\Controller;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Reader\Exception;
 
-class StudentCourseController extends BaseController
+class ExcelImportController extends Controller
 {
-
-    // Méthode pour afficher les étudiants inscrits à un cours spécifique
-    public function getStudentsByCourse($course_id)
-    {
-
-        // Récupérer les étudiants inscrits à ce cours
-        $students = (new StudentCourseModel())->getStudentsByCourse($course_id);
-        
-        // Passer les étudiants à la vue
-        return view('professor/students', ['students' => $students]);
-    }
-
-    public function import_grades($course_id)
+    public function import_grades()
     {
         $file = $this->request->getFile('excel_file');
 
@@ -35,16 +21,28 @@ class StudentCourseController extends BaseController
                 $sheet = $spreadsheet->getActiveSheet();
                 $rows = $sheet->toArray();
 
+                // Process the rows
+                $data = [];
                 foreach ($rows as $key => $row) {
                     // Skip the header row
                     if ($key === 0) {
                         continue;
                     }
-                    $student_id = (new StudentModel())->getStudentId($row[0], $row[1], $row[2]);
-                    (new StudentCourseModel())->updateGrade($student_id, $course_id, $row[3]);
+
+                    $data[] = [
+                        'name' => $row[0],
+                        'email' => $row[1],
+                        'phone' => $row[2],
+                        // Add other fields based on your database table
+                    ];
                 }
 
-                return redirect()->to("/courses/$course_id/students");
+                // Insert into the database
+                $db = \Config\Database::connect();
+                $builder = $db->table('users'); // Replace 'users' with your table name
+                $builder->insertBatch($data);
+
+                return redirect()->back()->with('success', 'Data imported successfully.');
             } catch (Exception $e) {
                 return redirect()->back()->with('error', 'Error reading the file: ' . $e->getMessage());
             }
