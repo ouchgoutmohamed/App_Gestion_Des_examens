@@ -33,7 +33,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         $routes->get('/grades_management', [CourseController::class, 'get_courses']);
 
         // get students list that study this
-        $routes->get('/courses/(:num)/students', [StudentCourseController::class,'getStudentsByCourse']);
+        $routes->get('/courses/(:num)/students', [StudentCourseController::class, 'getStudentsByCourse']);
 
         $routes->view('/update_grades', 'professor/update_grades');
     });
@@ -52,4 +52,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // show unauthorized page (403 status code)
     $routes->view('/unauthorized', 'unauthorized');
+
+    // show 404 page
+    $routes->set404Override(function () {
+        return view('errors/404');
+    });
 });
