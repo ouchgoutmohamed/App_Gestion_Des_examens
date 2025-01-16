@@ -4,7 +4,6 @@ use App\Controllers\CourseController;
 use App\Controllers\ProfessorController;
 use App\Controllers\StudentCourseController;
 use CodeIgniter\Router\RouteCollection;
-
 use App\Controllers\UserController;
 use App\Controllers\StudentController;
 use App\Enums\Roles;

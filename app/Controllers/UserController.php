@@ -45,10 +45,8 @@ class UserController extends BaseController
             'role' => Roles::fromId($user['role_id']),
             'is_logged_in' => true,
         ]);
-
-        return redirect()->to('/professor_dashboard');
-
-        if (Roles::PROFESSOR->getId() == $user['role_id']) {
+        
+        if(Roles::PROFESSOR->getId() == $user['role_id']){
             return redirect()->to('/professor_dashboard');
         }
         return redirect()->to('/student_dashboard');
