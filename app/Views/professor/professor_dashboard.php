@@ -36,7 +36,7 @@
 
                 <!-- Page Title Start -->
                 <div class="flex justify-between items-center mb-6">
-                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Bienvenu Mohamed!</h4>
+                    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Bienvenu <?= session('user_full_name') ?>!</h4>
 
                     <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
                         <div class="flex items-center gap-2">
@@ -66,7 +66,7 @@
                                             </div>
                                             <div>
                                                 <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Total d'étudiants</h4>
-                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">240</p>
+                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500"><?= esc($studentsCount) ?></p>
                                             </div>
                                         </div>
                                         <div>
@@ -95,7 +95,7 @@
                                             </div>
                                             <div>
                                                 <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Nombre de cours</h4>
-                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">2</p>
+                                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500"><?= esc($coursesCount) ?></p>
                                             </div>
                                         </div>
                                         <div>
@@ -117,6 +117,20 @@
                     </div>
 
                 </div> <!-- Grid End -->
+
+    <!-- Plugin Js -->
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/libs/%40frostui/tailwindcss/frostui.js"></script>
+
+    <!-- App Js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Apexcharts js -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Dashboard Project Page js -->
+    <script src="assets/js/pages/dashboard.js"></script>
 
 </body>
 

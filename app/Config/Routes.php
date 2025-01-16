@@ -1,6 +1,8 @@
 <?php
 
 use App\Controllers\CourseController;
+use App\Controllers\ProfessorController;
+use App\Controllers\StudentCourseController;
 use CodeIgniter\Router\RouteCollection;
 
 use App\Controllers\UserController;
@@ -20,19 +22,30 @@ $routes->view('/signup', 'register_student', ['filter' => 'guest']);
 $routes->post('/login', [UserController::class, 'login'], ['filter' => 'guest']);
 $routes->post('/signup', [StudentController::class, 'signup'], ['filter' => 'guest']);
 
+// handle logout request
+$routes->get('/logout', [UserController::class, 'logout']);
+
 // goup of routes with auth filter
 $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // professor's routes
     $routes->group('', ['filter' => 'role:' . Roles::PROFESSOR->value], function ($routes) {
+
         // show professor's dashboard
-        $routes->view('/professor_dashboard', 'professor/professor_dashboard');
+        $routes->get('/professor_dashboard', [ProfessorController::class, 'index']);
 
         // gets the courses that are taught by the logged in professor
         $routes->get('/grades_management', [CourseController::class, 'get_courses']);
 
-        $routes->view('/students', 'professor/students');
-        $routes->view('/update_grades', 'professor/update_grades');
+        // get students list that study this
+        $routes->get('/courses/(:num)/students', [StudentCourseController::class, 'getStudentsByCourse']);
+
+        // import grades of students trough an excel file
+        $routes->post('/courses/(:num)/import_grades', [StudentCourseController::class, 'import_grades']);
+
+        // update grades of student
+        $routes->post('/courses/(:num)/students/(:num)/update', [StudentCourseController::class, 'updateGrade']);
+
     });
 
     // studnet's routes
@@ -49,4 +62,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // show unauthorized page (403 status code)
     $routes->view('/unauthorized', 'unauthorized');
+
+    // show 404 page
+    $routes->set404Override(function () {
+        return view('errors/404');
+    });
 });

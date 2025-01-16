@@ -8,7 +8,7 @@ use App\Models\UserModel;
 class UserController extends BaseController
 {
     public function login()
-    {       
+    {
         $data = $this->request->getPost(['email', 'password']);
 
         $rules = [
@@ -41,11 +41,14 @@ class UserController extends BaseController
         // Set session data
         session()->set([
             'user_id' => $user['id'],
+            'user_full_name' => $user['first_name']. ' '.$user['last_name'],
             'role' => Roles::fromId($user['role_id']),
             'is_logged_in' => true,
         ]);
-        
-        if(Roles::PROFESSOR->getId() == $user['role_id']){
+
+        return redirect()->to('/professor_dashboard');
+
+        if (Roles::PROFESSOR->getId() == $user['role_id']) {
             return redirect()->to('/professor_dashboard');
         }
         return redirect()->to('/student_dashboard');
