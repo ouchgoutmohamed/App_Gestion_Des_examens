@@ -1,9 +1,9 @@
 <?php
 
 use App\Controllers\CourseController;
+use App\Controllers\ProfessorController;
 use App\Controllers\StudentCourseController;
 use CodeIgniter\Router\RouteCollection;
-
 use App\Controllers\UserController;
 use App\Controllers\StudentController;
 use App\Enums\Roles;
@@ -31,7 +31,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->group('', ['filter' => 'role:' . Roles::PROFESSOR->value], function ($routes) {
 
         // show professor's dashboard
-        $routes->view('/professor_dashboard', 'professor/professor_dashboard');
+        $routes->get('/professor_dashboard', [ProfessorController::class, 'index']);
 
         // gets the courses that are taught by the logged in professor
         $routes->get('/grades_management', [CourseController::class, 'get_courses']);

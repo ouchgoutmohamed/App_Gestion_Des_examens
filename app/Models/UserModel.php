@@ -31,19 +31,33 @@ class UserModel extends Model
     protected $updatedField = 'updated_at';       // Field for update date
     protected $deletedField = 'deleted_at';       // Field for soft delete (disabled here)
 
-    public function login(string $email, string $password): bool | array{
+    public function login(string $email, string $password): bool|array
+    {
         // Find a user with the given email
         $user = $this->where('email', $email)->first();
 
         // Check if the user exists and the password is correct
-        if($user !== null && password_verify($password, $user['password'])){
+        if ($user !== null && password_verify($password, $user['password'])) {
             return $user;
         } else {
             return false;
         }
     }
 
-    public function signup(array $data): bool{
+    public function signup(array $data): bool
+    {
         return $this->insert($data);
+    }
+
+    public function get_students_count($professorId)
+    {
+        $students = $this->select("users.*")
+            ->where("users.id", $professorId)
+            ->join("courses","courses.professor_id = users.id")
+            ->join("students_courses", "students_courses.course_id = courses.id")
+            ->get()
+            ->getResultArray();
+        
+        return count($students);
     }
 }
