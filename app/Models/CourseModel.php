@@ -30,4 +30,10 @@ class CourseModel extends Model
             ->where("professor_id", $professor_id)
             ->findAll();
     }
+
+    public function get_courses_count(int $professor_id):int
+    {
+        $courses = $this->where("professor_id", $professor_id)->findAll();
+        return count($courses);
+    }
 }
