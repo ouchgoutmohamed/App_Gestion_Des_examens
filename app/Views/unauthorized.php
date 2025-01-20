@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Error Page | 404 | Page not Found | Konrix - Responsive Tailwind Admin Dashboard</title>
+    <title>Accès non autorisé | ExamManager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
-    <meta content="coderthemes" name="author">
-
+    <meta content="App de gestion des examens" name="description">
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
