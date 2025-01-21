@@ -97,7 +97,7 @@
                                             <tr>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Module</th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Note</th>
-                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Decision</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Mention</th>
                                                 <th style="width:230px;" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Réclamation</th>
                                             </tr>
                                         </thead>
@@ -105,7 +105,11 @@
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Design Thinking</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">02.00</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">NV</td>
+                                                <td class="px-6 py-4 text-sm text-gray-800 dark:text-gray-200">
+                                                    <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">
+                                                        Echoué
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     <a href="/submit_reclamation">
                                                         <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
@@ -116,22 +120,25 @@
                                             </tr>
 
                                             <tr>
+                                                <!-- Disable the button "Soumettre une réclamation" when grade is 'En attente' -->
+                                                <!-- Disable the button "Soumettre une réclamation" when grade is 'En attente' -->
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">GLA</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">04.00</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">NV</td>
-                                                <td>
-                                                    <a href="/submit_reclamation">
-                                                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
-                                                            Soumettre une réclamation
-                                                        </button>
-                                                    </a>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"></td>
+                                                <td class="px-6 py-4 text-sm text-gray-800 dark:text-gray-200">
+                                                    <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+                                                        En attente
+                                                    </span>
                                                 </td>
                                             </tr>
 
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Francais</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">20.00</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">V</td>
+                                                <td class="px-6 py-4 text-sm text-gray-800 dark:text-gray-200">
+                                                    <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                                                        validée
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     <a href="/submit_reclamation">
                                                         <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
@@ -149,7 +156,7 @@
                 </div>
             </main>
 
-            <!-- Include the header -->
+            <!-- Include the footer -->
             <?= view('student/components/footer'); ?>
 
         </div>
