@@ -45,6 +45,8 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         // update grades of student
         $routes->post('/courses/(:num)/students/(:num)/update', [StudentCourseController::class, 'updateGrade']);
 
+        $routes->view('/reclamations', 'professor/reclamations');
+
     });
 
     // studnet's routes
@@ -54,6 +56,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         $routes->view('/student_dashboard', 'student/student_dashboard');
 
         $routes->view('/results', 'student/results');
+
+        $routes->view('/submit_reclamation', 'student/submit_reclamation');
+        $routes->view('/my_reclamations', 'student/my_reclamations');
     });
 
     // handle logout request

@@ -98,6 +98,7 @@
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Module</th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Note</th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Decision</th>
+                                                <th style="width:230px;" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Réclamation</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -105,26 +106,45 @@
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Design Thinking</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">02.00</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">NV</td>
+                                                <td>
+                                                    <a href="/submit_reclamation">
+                                                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                                                            Soumettre une réclamation
+                                                        </button>
+                                                    </a>
+                                                </td>
                                             </tr>
 
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">GLA</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">04.00</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">NV</td>
+                                                <td>
+                                                    <a href="/submit_reclamation">
+                                                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                                                            Soumettre une réclamation
+                                                        </button>
+                                                    </a>
+                                                </td>
                                             </tr>
 
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Francais</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">20.00</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">V</td>
+                                                <td>
+                                                    <a href="/submit_reclamation">
+                                                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                                                            Soumettre une réclamation
+                                                        </button>
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>                              
                         </div>
                     </div> <!-- end card -->
-
-                    
 
                 </div>
             </main>

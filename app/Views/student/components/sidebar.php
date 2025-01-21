@@ -41,6 +41,12 @@
                 <span class="menu-text"> Mes résultats</span>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="/my_reclamations" class="menu-link">
+                <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
+                <span class="menu-text"> Réclamations</span>
+            </a>
+        </li>
     
     </ul>
 

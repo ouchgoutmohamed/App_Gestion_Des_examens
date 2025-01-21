@@ -42,6 +42,12 @@
                 <span class="menu-text"> Gestion des Notes</span>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="/reclamations" class="menu-link">
+                <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
+                <span class="menu-text"> Réclamations</span>
+            </a>
+        </li>
     </ul>
 
 </div>
