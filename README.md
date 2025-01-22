@@ -45,7 +45,7 @@ An exam management application with features allowing:
    - **Create the database:**
      - Option 1: Run the following command to create the `gestion_exams` database:
        ```bash
-       php spark create:db gestion_exams
+       php spark db:create gestion_exams
        ```
      - Option 2: Create it manually using software like phpMyAdmin or MySQL Workbench.
 
