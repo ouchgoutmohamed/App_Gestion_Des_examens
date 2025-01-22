@@ -35,3 +35,18 @@ CREATE TABLE students_courses (
     FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE reclamations (
+    student_id INT UNSIGNED NOT NULL,
+    professor_id INT UNSIGNED NOT NULL,
+    course_id INT UNSIGNED NOT NULL,
+    justification_message VARCHAR(255) NOT NULL,
+    file MEDIUMBLOB, -- Up to 65 KB.
+    state VARCHAR(20) DEFAULT "en cours",
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (student_id, course_id, professor_id),
+    UNIQUE KEY unique_student_course (student_id, course_id, professor_id), -- Unique constraint
+    FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (professor_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE ON UPDATE CASCADE
+);

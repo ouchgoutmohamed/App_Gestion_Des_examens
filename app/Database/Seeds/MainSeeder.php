@@ -13,5 +13,6 @@ class MainSeeder extends Seeder
         $this->call("StudentSeeder");
         $this->call("CourseSeeder");
         $this->call("StudentcourseSeeder");
+        $this->call("ReclamationSeeder");
     }
 }
