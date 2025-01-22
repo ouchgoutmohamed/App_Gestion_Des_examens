@@ -50,39 +50,6 @@
                     </div>
                 </div>
                 <!-- Page Title End -->
-
-                <div class="flex flex-col gap-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="flex justify-between items-center">
-                                <h4 class="card-title">Informations Académiques</h4>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="grid lg:grid-cols-3 gap-6">     
-                                <div>
-                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Année académique</label>
-                                    <select class="form-select" id="example-select">
-                                        <option>2024/2025</option>
-                                        <option>2023/2024</option>
-                                        <option>2022/2023</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Semestre</label>
-                                    <select class="form-select" id="example-select">
-                                        <option>S1</option>
-                                        <option>S2</option>
-                                        <option>S3</option>
-                                        <option>S4</option>
-                                    </select>
-                                </div>
-                            </div>
-                        
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-
                 <div class="col-span-1">
                     <div class="card">
                         <div class="card-header flex justify-between items-center">

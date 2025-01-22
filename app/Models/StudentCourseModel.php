@@ -50,9 +50,10 @@ class StudentCourseModel extends Model
     public function get_grades($student_id)
     {
         return $this->select('courses.id as course_id, courses.title, students_courses.grade')
-            ->where("student_id", $student_id)
-            ->join('courses', 'courses.id = students_courses.student_id')
+            ->where("students_courses.student_id", $student_id)
+            ->join('courses', 'courses.id = students_courses.course_id')
             ->get()
             ->getResultArray();
     }
+
 }
