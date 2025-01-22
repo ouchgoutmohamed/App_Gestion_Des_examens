@@ -38,12 +38,21 @@ class StudentCourseModel extends Model
             ->getResultArray();
     }
 
-    public function updateGrade($student_id, $course_id, $grade)
+    public function updateGrade($student_id, $course_id, $grade): bool
     {
-        $this->db->table($this->table) // Ensure you're targeting the correct table
+        return $this->db->table($this->table) // Ensure you're targeting the correct table
             ->set("grade", $grade) // Set the new grade
             ->where('student_id', $student_id) // Add condition for student ID
             ->where('course_id', $course_id) // Add condition for course ID
             ->update(); // Execute the update query
+    }
+
+    public function get_grades($student_id)
+    {
+        return $this->select('courses.id as course_id, courses.title, students_courses.grade')
+            ->where("student_id", $student_id)
+            ->join('courses', 'courses.id = students_courses.student_id')
+            ->get()
+            ->getResultArray();
     }
 }

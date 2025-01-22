@@ -74,14 +74,20 @@ class StudentCourseController extends BaseController
         }
 
         // Update the grade in the database
-        $model = new StudentCourseModel();
-        $update_status = $model->updateGrade($student_id, $course_id, $new_grade);
+        $update_status = (new StudentCourseModel())->updateGrade($student_id, $course_id, $new_grade);
 
         if ($update_status) {
             return redirect()->to("/courses/$course_id/students")->with('success', 'Grade updated successfully.');
         } else {
             return redirect()->back()->with('error', 'Failed to update grade.');
         }
+    }
+
+    public function get_grades()
+    {
+        $grades = (new StudentCourseModel())->get_grades(session("user_id"));
+
+        return view('student/results', ['grades'=> $grades]);
     }
 
 }
