@@ -83,9 +83,9 @@ class StudentCourseController extends BaseController
         }
     }
 
-    public function get_grades($student_id)
+    public function get_grades()
     {
-        $grades = (new StudentCourseModel())->get_grades($student_id);
+        $grades = (new StudentCourseModel())->get_grades(session("user_id"));
 
         return view('student/results', ['grades'=> $grades]);
     }

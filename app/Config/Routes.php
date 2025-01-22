@@ -52,7 +52,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     // studnet's routes
     $routes->group('', ['filter' => 'role:' . Roles::STUDENT->value], function ($routes) {
 
-        $routes->get('/results/(:num)', [StudentCourseController::class, 'get_grades']);
+        $routes->get('/results', [StudentCourseController::class, 'get_grades']);
 
         // show student's dashboard
         $routes->view('/student_dashboard', 'student/student_dashboard');
