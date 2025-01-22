@@ -32,7 +32,7 @@ class AddReclamationTableMigration extends Migration
                 'null' => false,
             ],
             "file" => [
-                "type" => "MEDIUMBLOB",
+                "type" => "LONGBLOB",
                 'null' => true,
             ],
             "state" => [

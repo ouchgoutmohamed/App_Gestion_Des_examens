@@ -41,7 +41,7 @@ CREATE TABLE reclamations (
     professor_id INT UNSIGNED NOT NULL,
     course_id INT UNSIGNED NOT NULL,
     justification_message VARCHAR(255) NOT NULL,
-    file MEDIUMBLOB, -- Up to 65 KB.
+    file LONGBLOB, -- Up to 4 GB.
     state VARCHAR(20) DEFAULT "en cours",
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (student_id, course_id, professor_id),
