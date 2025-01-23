@@ -83,7 +83,7 @@
                                                     <?php endif; ?>
                                                 </td>
                                                 <td>
-                                                    <?php if (!empty($grade['grade']) && $grade['grade'] < 10): ?>
+                                                    <?php if (!empty($grade['grade'])): ?>
                                                         <a href="/submit_reclamation?course_id=<?= esc($grade['course_id']); ?>">
                                                             <button type="button" class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
                                                                 Soumettre une réclamation
